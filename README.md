@@ -21,14 +21,16 @@ The materials are organized by language. Currently, only the Hebrew edition is a
 
 Written by **Ilan Amoyal**.
 
+💼 **LinkedIn:** [linkedin.com/in/ilan-amoyal](https://www.linkedin.com/in/ilan-amoyal)
 
-[💼 **LinkedIn:** linkedin.com/in/ilan-amoyal](https://www.linkedin.com/in/ilan-amoyal)
-[✉️ **Email:** ai.understand.me@gmail.com](mailto:ai.understand.me@gmail.com)
-[🌐 kita.co.il](https://kita.co.il)
+✉️ **Email:** [ai.understand.me@gmail.com](mailto:ai.understand.me@gmail.com)
+
+🌐 **Website:** [kita.co.il](https://kita.co.il)
+
 
 ### Resources
 
-* [Hebrew resources](he/)
+* [Hebrew resources](he/README.md)
 
 ---
 
@@ -48,10 +50,12 @@ Written by **Ilan Amoyal**.
 
 מאת **אילן אמויאל**.
 
+💼 **לינקדאין:** [linkedin.com/in/ilan-amoyal](https://www.linkedin.com/in/ilan-amoyal)
 
-[💼 **לינקדאין:** linkedin.com/in/ilan-amoyal](https://www.linkedin.com/in/ilan-amoyal)
-[✉️ **אימייל:** ai.understand.me@gmail.com](mailto:ai.understand.me@gmail.com)
-[🌐 kita.co.il](https://kita.co.il)
+✉️ **אימייל:** [ai.understand.me@gmail.com](mailto:ai.understand.me@gmail.com)
 
+🌐 **אתר:** [kita.co.il](https://kita.co.il)
 
-* [לחומרים בעברית](he/README.md)
+### חומרים נלווים
+
+* [חומרים בעברית](he/README.md)

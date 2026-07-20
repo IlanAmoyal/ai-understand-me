@@ -33,9 +33,12 @@
 
 אילן אמויאל הוא מהנדס AI, מפתח ומרצה טכנולוגי, ומחבר הספר **"בינה, תביני אותי — מהבנה לעבודה מעשית עם בינה מלאכותית"**.
 
-[💼 **לינקדאין:** linkedin.com/in/ilan-amoyal](https://www.linkedin.com/in/ilan-amoyal)
-[✉️ **אימייל:** ai.understand.me@gmail.com](mailto:ai.understand.me@gmail.com)
-[🌐 kita.co.il](https://kita.co.il)
+
+💼 **לינקדאין:** [linkedin.com/in/ilan-amoyal](https://www.linkedin.com/in/ilan-amoyal)
+
+✉️ **אימייל:** [ai.understand.me@gmail.com](mailto:ai.understand.me@gmail.com)
+
+🌐 **אתר:** [kita.co.il](https://kita.co.il)
 
 
 ---
