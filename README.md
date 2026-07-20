@@ -28,7 +28,7 @@ Written by **Ilan Amoyal**.
 
 ### Resources
 
-* [Hebrew resources](he/README.md)
+* [Hebrew resources](he/)
 
 ---
 
