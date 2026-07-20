@@ -34,6 +34,8 @@ Written by **Ilan Amoyal**.
 
 ---
 
+<div dir="rtl">
+
 <a id="hebrew"></a>
 
 ## עברית
@@ -59,3 +61,5 @@ Written by **Ilan Amoyal**.
 ### חומרים נלווים
 
 * [חומרים בעברית](he/README.md)
+
+</div>
