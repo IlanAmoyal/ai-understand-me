@@ -1,0 +1,61 @@
+async function copyText(text) {
+  if (navigator.clipboard && window.isSecureContext) {
+    await navigator.clipboard.writeText(text);
+    return;
+  }
+
+  const textarea = document.createElement("textarea");
+  textarea.value = text;
+  textarea.setAttribute("readonly", "");
+  textarea.style.position = "fixed";
+  textarea.style.opacity = "0";
+  document.body.appendChild(textarea);
+  textarea.select();
+
+  const copied = document.execCommand("copy");
+  textarea.remove();
+
+  if (!copied) {
+    throw new Error("Copy failed");
+  }
+}
+
+document.addEventListener("click", async (event) => {
+  const button = event.target.closest(".copy-button");
+  if (!button) return;
+
+  const card = button.closest(".prompt-card");
+  const code = card?.querySelector("code");
+  if (!code) return;
+
+  try {
+    await copyText(code.textContent ?? "");
+    button.textContent = button.dataset.copiedLabel || "Copied";
+
+    window.setTimeout(() => {
+      button.textContent = button.dataset.copyLabel || "Copy";
+    }, 2000);
+  } catch (error) {
+    console.error("Could not copy prompt", error);
+  }
+});
+
+
+function updateFixedFooterSpace() {
+  const footer = document.querySelector(".site-footer");
+  if (!footer) return;
+  document.documentElement.style.setProperty(
+    "--fixed-footer-height",
+    `${Math.ceil(footer.getBoundingClientRect().height)}px`
+  );
+}
+
+window.addEventListener("load", updateFixedFooterSpace);
+window.addEventListener("resize", updateFixedFooterSpace);
+
+if ("ResizeObserver" in window) {
+  const footer = document.querySelector(".site-footer");
+  if (footer) {
+    new ResizeObserver(updateFixedFooterSpace).observe(footer);
+  }
+}

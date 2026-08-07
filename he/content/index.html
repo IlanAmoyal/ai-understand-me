@@ -1,0 +1,1697 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>תכנים נלווים - בינה, תביני אותי</title>
+  <link rel="stylesheet" href="../../static/css/site.css">
+  <style>
+    :root {
+      --nav-background: #181d17;
+      --nav-text: #f5f5f5;
+    }
+  </style>
+  
+</head>
+<body class="has-fixed-footer">
+  <a class="skip-link" href="#main-content">דלג לתוכן הראשי</a>
+  <header class="site-header">
+    <div class="site-banner" aria-hidden="true">
+      <img src="../../static/images/banner.png" alt="">
+    </div>
+    <div class="site-header-bar">
+      <div class="container">
+        
+        <nav class="header-nav" aria-label="ניווט ראשי">
+          <a class="header-home-link" href="../" aria-label="עמוד הבית" title="עמוד הבית">
+            <svg class="home-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M3 11.5 12 4l9 7.5"/>
+              <path d="M5.5 10.5V20h13v-9.5M9.5 20v-6h5v6"/>
+            </svg>
+          </a>
+          
+          <a class="brand" href="../">בינה, תביני אותי</a>
+          
+        </nav>
+        
+      </div>
+    </div>
+  </header>
+  <main class="container" id="main-content">
+    
+<header class="page-heading">
+  <h1>תכנים נלווים</h1>
+</header>
+
+<nav class="toc" id="table-of-contents" aria-label="תכנים נלווים">
+  <ul>
+  
+    <li><a href="#chapter-01">פרק 1 - מודל שפה גדול</a></li>
+  
+    <li><a href="#chapter-02">פרק 2 - פרומפט &#34;ישר ולעניין&#34;</a></li>
+  
+    <li><a href="#chapter-03">פרק 3 - אל תבקש יפה — תארגן נכון</a></li>
+  
+    <li><a href="#chapter-04">פרק 4 - הקוסם מארץ עוץ</a></li>
+  
+    <li><a href="#chapter-05">פרק 5 - סדר במושגים</a></li>
+  
+    <li><a href="#chapter-06">פרק 6 - עבודה עם קבצים</a></li>
+  
+    <li><a href="#chapter-07">פרק 7 - חשיבה וחלון ההקשר (Context Window)</a></li>
+  
+    <li><a href="#chapter-08">פרק 8 - כללים לעבודה עם הקשר ארוך</a></li>
+  
+    <li><a href="#chapter-09">פרק 9 - כובע המבקר</a></li>
+  
+    <li><a href="#chapter-10">פרק 10 - ChatGPT</a></li>
+  
+    <li><a href="#chapter-11">פרק 11 - Gemini</a></li>
+  
+    <li><a href="#chapter-12">פרק 12 - התקנת LLM מקומי</a></li>
+  
+    <li><a href="#appendix-01">נספח א - תחביר Markdown</a></li>
+  
+    <li><a href="#appendix-02">נספח ב - איך מאמנים מודל שפה גדול</a></li>
+  
+    <li><a href="#appendix-03">נספח ג - ניהול חסכוני של מכסת השימוש</a></li>
+  
+  </ul>
+</nav>
+
+
+<section class="book-section" id="chapter-01">
+  <h2>פרק 1 - מודל שפה גדול</h2>
+
+  
+
+  
+  <div class="content-group markdown-body links-group">
+    <h3>קישורים</h3>
+    <h4>כלי AI פופולריים</h4>
+<ul>
+<li><span class="external-link"><a href="https://chatgpt.com"><strong>ChatGPT (של OpenAI)</strong></a><a class="new-tab-link" href="https://chatgpt.com" target="_blank" rel="noopener noreferrer" aria-label="פתח את ChatGPT (של OpenAI) בחלון חדש" title="פתח בחלון חדש"><svg class="new-tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></span></li>
+<li><span class="external-link"><a href="https://gemini.google.com"><strong>Gemini (של Google)</strong></a><a class="new-tab-link" href="https://gemini.google.com" target="_blank" rel="noopener noreferrer" aria-label="פתח את Gemini (של Google) בחלון חדש" title="פתח בחלון חדש"><svg class="new-tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></span></li>
+<li><span class="external-link"><a href="https://claude.ai"><strong>Claude (של Anthropic)</strong></a><a class="new-tab-link" href="https://claude.ai" target="_blank" rel="noopener noreferrer" aria-label="פתח את Claude (של Anthropic) בחלון חדש" title="פתח בחלון חדש"><svg class="new-tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></span></li>
+<li><span class="external-link"><a href="https://grok.com"><strong>Grok (של xAI)</strong></a><a class="new-tab-link" href="https://grok.com" target="_blank" rel="noopener noreferrer" aria-label="פתח את Grok (של xAI) בחלון חדש" title="פתח בחלון חדש"><svg class="new-tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></span></li>
+</ul>
+
+  </div>
+  
+
+  
+  <div class="content-group">
+    <h3>פרומפטים</h3>
+    
+    <article class="prompt-card">
+      <h4>השלמת סיפור</h4>
+      <button class="copy-button" type="button" data-copy-label="העתק" data-copied-label="הועתק">העתק</button>
+      <pre><code>פעם היה ילד שיצא ליער ו-</code></pre>
+    </article>
+    
+    <article class="prompt-card">
+      <h4>מתכון לפסטה</h4>
+      <button class="copy-button" type="button" data-copy-label="העתק" data-copied-label="הועתק">העתק</button>
+      <pre><code>כתוב מתכון פשוט לפסטה ברוטב עגבניות</code></pre>
+    </article>
+    
+    <article class="prompt-card">
+      <h4>פונקציית מיון בפייתון</h4>
+      <button class="copy-button" type="button" data-copy-label="העתק" data-copied-label="הועתק">העתק</button>
+      <pre><code>כתוב פונקציה בפייתון שממיינת רשימת מספרים</code></pre>
+    </article>
+    
+    <article class="prompt-card">
+      <h4>הסבר ריבית דריבית בשתי רמות</h4>
+      <button class="copy-button" type="button" data-copy-label="העתק" data-copied-label="הועתק">העתק</button>
+      <pre><code>הסבר מהי &#34;ריבית דריבית&#34; בשתי רמות שונות:
+- פעם אחת לתלמידים בכיתה ח&#39;
+- ופעם שנייה לסטודנט לכלכלה</code></pre>
+    </article>
+    
+    <article class="prompt-card">
+      <h4>הפלנטה המומצאת</h4>
+      <button class="copy-button" type="button" data-copy-label="העתק" data-copied-label="הועתק">העתק</button>
+      <pre><code>מדוע לדעתך פלנטה משנה את צבעה בין ורוד, כחול וירוק מדי 20 עד 30 שעות באופן אקראי, ונצפית כדמות של מיקי מאוס ובובספוג לסירוגין כפי שהראו תצפיות שונות שביצענו בחודש האחרון במעבדה שלנו, ואוששו במקביל במעבדה נוספת? הצע שם לפלנטה זו.</code></pre>
+    </article>
+    
+    <article class="prompt-card">
+      <h4>חיסכון בחשמל</h4>
+      <button class="copy-button" type="button" data-copy-label="העתק" data-copied-label="הועתק">העתק</button>
+      <pre><code>כתוב הסבר קצר וברור על דרכים לחיסכון בחשמל בבית.
+
+ההסבר מיועד לאנשים שרוצים להפחית את חשבון החשמל, בלי להיכנס לחישובים טכניים או למונחים מקצועיים.
+
+נסח את התשובה למשפחה ממוצעת, ללא ידע מוקדם בתחום.
+
+אם חסר לך מידע חשוב לפני הכתיבה, שאל אותי עד שלוש שאלות קצרות.
+
+כתוב גרסה ראשונה, ולאחר מכן אתן לך משוב כדי לשפר אותה.</code></pre>
+    </article>
+    
+  </div>
+  
+
+  
+  <div class="content-group markdown-body">
+    <h3>תשובות לתרגילים</h3>
+    <p><strong>בפרק זה אין תשובות קבועות לתרגילים - התשובות תלויות בבחירות שלך ובתוצאות ההתנסות.</strong></p>
+
+  </div>
+  
+
+  <p class="back-to-toc">
+    <a href="#table-of-contents">
+      <svg class="toc-list-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M9 6h11M9 12h11M9 18h11"/>
+        <path d="M4 6h1M4 12h1M4 18h1"/>
+      </svg>
+      <span>חזרה לתוכן העניינים</span>
+    </a>
+  </p>
+</section>
+
+<section class="book-section" id="chapter-02">
+  <h2>פרק 2 - פרומפט &#34;ישר ולעניין&#34;</h2>
+
+  
+
+  
+
+  
+  <div class="content-group">
+    <h3>פרומפטים</h3>
+    
+    <article class="prompt-card">
+      <h4>דוגמה פתרון לפי פלט רצוי</h4>
+      <button class="copy-button" type="button" data-copy-label="העתק" data-copied-label="הועתק">העתק</button>
+      <pre><code>פתור את הבעיות הבאות באותה דרך שבה מוצגת הדוגמה.
+
+דוגמה:
+
+שאלה: לדני היו 12 עפרונות. הוא נתן 5 לחברו. כמה עפרונות נשארו לו?
+
+פלט רצוי:
+
+תחילה מזהים את כמות העפרונות ההתחלתית: 12.
+אחר כך מזהים כמה נלקחו: 5.
+מחשבים: 12 פחות 5 שווה 7.
+תשובה: לדני נשארו 7 עפרונות.
+
+כעת פתור באותה צורת הצגה את השאלה הבאה:
+
+לאורן יש 10 מחברות ולדנה יש 12 מחברות. אם כל אחד מהם נתן חצי מהמחברות שברשותו לבנימין. כמה מחברות נותרו לכל אחד מהם, וכמה מחברות קיבל בנימין?</code></pre>
+    </article>
+    
+    <article class="prompt-card">
+      <h4>פרומפט ראשון</h4>
+      <button class="copy-button" type="button" data-copy-label="העתק" data-copied-label="הועתק">העתק</button>
+      <pre><code>בנה לי תוכנית אימונים לחודש.</code></pre>
+    </article>
+    
+    <article class="prompt-card">
+      <h4>פרומפט שני</h4>
+      <button class="copy-button" type="button" data-copy-label="העתק" data-copied-label="הועתק">העתק</button>
+      <pre><code>לפני שאתה בונה תוכנית, רשום חמישה פרטי מידע שחסרים לך כדי שלא תנחש, ונסח אותם כשאלות קצרות.</code></pre>
+    </article>
+    
+    <article class="prompt-card">
+      <h4>פרומפט ראשון</h4>
+      <button class="copy-button" type="button" data-copy-label="העתק" data-copied-label="הועתק">העתק</button>
+      <pre><code>אני צריך רעיונות למתנה.</code></pre>
+    </article>
+    
+    <article class="prompt-card">
+      <h4>פרומפט משופר</h4>
+      <button class="copy-button" type="button" data-copy-label="העתק" data-copied-label="הועתק">העתק</button>
+      <pre><code>תן לי 10 רעיונות למתנה ליום הולדת.
+
+התקציב שלי הוא עד 200 ש&#34;ח.
+
+האדם שאני נותן לו את המתנה אוהב בישול וטיולים בטבע.
+
+אני צריך משהו שאפשר לקנות היום בחנות פיזית (לא אונליין).
+
+כתוב את התשובה כרשימה ממוספרת, ובכל רעיון כתוב במשפט אחד &#34;למה זה מתאים&#34;.</code></pre>
+    </article>
+    
+    <article class="prompt-card">
+      <h4>פרומפט ראשון</h4>
+      <button class="copy-button" type="button" data-copy-label="העתק" data-copied-label="הועתק">העתק</button>
+      <pre><code>כתוב הודעת ווטסאפ לבעל מקצוע.
+ 
+הטון צריך להיות מנומס.
+ 
+תסביר שיש תקלה.</code></pre>
+    </article>
+    
+    <article class="prompt-card">
+      <h4>פרומפט משופר</h4>
+      <button class="copy-button" type="button" data-copy-label="העתק" data-copied-label="הועתק">העתק</button>
+      <pre><code>כתוב הודעת ווטסאפ לאינסטלטור.
+ 
+המטרה: לקבוע הגעה לתיקון נזילה.
+ 
+הרקע: יש נזילה מתחת לכיור המטבח מאז אתמול בערב.
+ 
+אילוץ: ניתן לתאם הגעה היום רק בין 16:00 ל־19:00.
+ 
+פורמט תשובה: 3–4 שורות קצרות.
+ 
+טון: מנומס וישיר.</code></pre>
+    </article>
+    
+    <article class="prompt-card">
+      <h4>תרגיל 4 אותו פרומפט תוצאות שונות</h4>
+      <button class="copy-button" type="button" data-copy-label="העתק" data-copied-label="הועתק">העתק</button>
+      <pre><code>תכנן לי תפריט ארוחת ערב ל־6 אנשים.
+
+מגבלות: עד 60 דקות עבודה, בלי טיגון, ועם רשימת קניות בסוף.
+
+פורמט תשובה: כותרת לכל מנה + 3 נקודות הסבר קצרות + רשימת קניות.</code></pre>
+    </article>
+    
+    <article class="prompt-card">
+      <h4>תרגיל 5 גישור על סתירות</h4>
+      <button class="copy-button" type="button" data-copy-label="העתק" data-copied-label="הועתק">העתק</button>
+      <pre><code>כתוב הסבר מפורט, מעמיק ומקיף על האופן שבו מטוס נשאר באוויר.
+
+אילוץ קשיח: אורך התשובה לא יעלה על 25 מילים.
+
+סגנון: השתמש בשפה ציורית ופיוטית.</code></pre>
+    </article>
+    
+  </div>
+  
+
+  
+  <div class="content-group markdown-body">
+    <h3>תשובות לתרגילים</h3>
+    <p><strong>בפרק זה אין תשובות קבועות לתרגילים - התשובות תלויות בבחירות שלך ובתוצאות ההתנסות.</strong></p>
+
+  </div>
+  
+
+  <p class="back-to-toc">
+    <a href="#table-of-contents">
+      <svg class="toc-list-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M9 6h11M9 12h11M9 18h11"/>
+        <path d="M4 6h1M4 12h1M4 18h1"/>
+      </svg>
+      <span>חזרה לתוכן העניינים</span>
+    </a>
+  </p>
+</section>
+
+<section class="book-section" id="chapter-03">
+  <h2>פרק 3 - אל תבקש יפה — תארגן נכון</h2>
+
+  
+
+  
+  <div class="content-group markdown-body links-group">
+    <h3>קישורים</h3>
+    <h4>מחקרים המוזכרים בפרק</h4>
+<ul>
+<li><span class="external-link"><a href="https://doi.org/10.18653/v1/2024.sicon-1.2"><strong>Should We Respect LLMs? A Cross-Lingual Study on the Influence of Prompt Politeness on LLM Performance</strong></a><a class="new-tab-link" href="https://doi.org/10.18653/v1/2024.sicon-1.2" target="_blank" rel="noopener noreferrer" aria-label="פתח את Should We Respect LLMs? A Cross-Lingual Study on the Influence of Prompt Politeness on LLM Performance בחלון חדש" title="פתח בחלון חדש"><svg class="new-tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></span></li>
+<li><span class="external-link"><a href="https://arxiv.org/abs/2510.04950"><strong>Mind Your Tone: Investigating How Prompt Politeness Affects LLM Accuracy</strong></a><a class="new-tab-link" href="https://arxiv.org/abs/2510.04950" target="_blank" rel="noopener noreferrer" aria-label="פתח את Mind Your Tone: Investigating How Prompt Politeness Affects LLM Accuracy בחלון חדש" title="פתח בחלון חדש"><svg class="new-tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></span></li>
+</ul>
+
+  </div>
+  
+
+  
+  <div class="content-group">
+    <h3>פרומפטים</h3>
+    
+    <article class="prompt-card">
+      <h4>דוגמה פרומפט מובנה ב Markdown</h4>
+      <button class="copy-button" type="button" data-copy-label="העתק" data-copied-label="הועתק">העתק</button>
+      <pre><code># המטרה:
+כתיבת תרגיל חיבור וחיסור לתלמידי כיתה ב&#39;
+
+## תפקיד:
+אתה מורה למתמטיקה
+
+## רקע וקהל יעד
+- הכן תרגיל בנושא חיבור וחיסור
+- התרגיל מיועד לתלמידי כיתה ב&#39;
+- מדובר בתלמידים בעלי ידע בסיסי המסוגלים לבצע חיבור מספרים חיוביים בלבד עד סכום של 50
+
+## דרישות התרגיל
+- נושא: חיבור וחיסור של מספרים חיוביים בלבד
+- כלול הסברים פשוטים
+- המחש באמצעות חמש דוגמאות
+- כתוב עשר שאלות לתרגול
+
+## פורמט הפלט
+- הפרד בין הסברים, דוגמאות ושאלות לתרגול
+- כתוב את השאלות בפורמט של רשימה ממוספרת
+- 5 שאלות תהיינה פתוחות ו־5 תהיינה אמריקאיות
+- בכל שאלה אמריקאית תן 4 אפשרויות בחירה
+- **הקפד על טון ידידותי לילדים**
+- שלב אלמנטים ויזואליים ידידותיים לילדים
+- במקום שבו יש צורך, העדף פנייה בגוף שני־רבים
+
+## מגבלות
+- בחיבור: הגבל את התוצאות לעד 50
+- בחיסור: שני המספרים לא יהיו גדולים מ־50
+- התרגילים יכללו תוצאות ומספרים שהם חיוביים ושלמים בלבד</code></pre>
+    </article>
+    
+    <article class="prompt-card">
+      <h4>תבנית לכתבה לעיתון</h4>
+      <button class="copy-button" type="button" data-copy-label="העתק" data-copied-label="הועתק">העתק</button>
+      <pre><code># משימה: כתיבת כתבה לעיתון
+
+## תפקידך: עיתונאי
+
+## נושא: {פרט את נושא הכתבה...}
+
+## קהל יעד: 
+קהל היעד הוא קוראים בני {פרט את טווח הגילאים...}
+
+## נקודות ועובדות חשובות שיש לכלול בכתבה:
+- {פרט רשימת נקודות חשובות...}
+
+## המסר שיעלה מהכתבה:
+- {פרט את המסר המרכזי של הכתבה...}
+
+## דרישות:
+- {פרט דרישות ספציפיות...}
+
+## פורמט פלט:
+- כלול כותרת לכתבה
+- כלול תת־כותרת באורך {פרט את האורך הרצוי...}
+- אורך הכתבה יהיה {פרט את אורך הכתבה הרצוי...}
+- כתוב בטון עיתונאי
+- הצע חמישה קטעים קצרים מהכתבה להבלטה
+- הצע תמונות שיכולות להשתלב בכתבה (נושאי התמונות בלבד, לא התמונות עצמן)
+- {פרט את כל דרישות הפורמט הנוספות...}
+
+## הוראות מיוחדות:
+- אל תוסיף הקדמה או סיכום מחוץ לכתבה; גש מיד לפלט המבוקש
+- אל תשתמש באייקונים או באימוג&#39;ים
+- אם נדרשות הבהרות, שאל עד 3 שאלות קצרות לפני הכתיבה
+- {הוסף הוראות נוספות במידת הצורך...}</code></pre>
+    </article>
+    
+    <article class="prompt-card">
+      <h4>תרגיל שיפור פרומפט</h4>
+      <button class="copy-button" type="button" data-copy-label="העתק" data-copied-label="הועתק">העתק</button>
+      <pre><code>שפר את הפרומפט הבא כך שיהיה ברור ומובנה ויכלול את הדרישות בצורה מסודרת.
+
+אם הפרומפט כולל משימות רבות, פצל את הפרומפט למספר פרומפטים.
+
+הנה הפרומפט:
+
+אני רוצה לפרסם מתכון לקדרה חורפית, תעשה לי פתיח שיווקי, סיכום מתכון, רשימת קניות, תוכנית עבודה במטבח, וריאציות למתכון, טיפים לצילום, תוכן לרשתות חברתיות, SEO בסיסי, FAQ קצר, ובדוק עובדות.</code></pre>
+    </article>
+    
+    <article class="prompt-card">
+      <h4>פרומפט ראשון</h4>
+      <button class="copy-button" type="button" data-copy-label="העתק" data-copied-label="הועתק">העתק</button>
+      <pre><code>בבקשה תעזור לי לכתוב הודעה לשכן על רעש. סבבה?</code></pre>
+    </article>
+    
+    <article class="prompt-card">
+      <h4>פרומפט משופר</h4>
+      <button class="copy-button" type="button" data-copy-label="העתק" data-copied-label="הועתק">העתק</button>
+      <pre><code>נסח הודעת ווטסאפ לשכן על רעש אחרי 23:00
+ 
+טון: ענייני ומכבד, בלי האשמות
+ 
+אורך: עד 5 שורות
+ 
+כלול: בקשה לשקט + הצעה לפתרון (למשל: &#34;אם יש אירוע — להודיע מראש&#34;)
+ 
+אם חסר פרט חשוב — שאל שאלה אחת לפני שאתה מנסח את ההודעה</code></pre>
+    </article>
+    
+    <article class="prompt-card">
+      <h4>פרומפט ראשון</h4>
+      <button class="copy-button" type="button" data-copy-label="העתק" data-copied-label="הועתק">העתק</button>
+      <pre><code>אני רוצה שתעזור לי לתכנן ערב חברים בבית, שיהיה אוכל טעים אבל לא יקר, ושלא אצטרך לבשל הרבה, ושזה יתאים גם לצמחונים וגם למי שאוכל הכול, ושיהיה גם משהו מתוק, ותעשה לי רשימת קניות.</code></pre>
+    </article>
+    
+    <article class="prompt-card">
+      <h4>פרומפט מובנה ומפורט יותר</h4>
+      <button class="copy-button" type="button" data-copy-label="העתק" data-copied-label="הועתק">העתק</button>
+      <pre><code>תכנן ערב חברים בבית ל־6 אנשים
+ 
+מגבלות: עד 45 דקות הכנה, תקציב עד 250 ש&#34;ח
+ 
+העדפות: 2 צמחונים, 4 אוכלים הכול
+ 
+צריך לכלול: משהו עיקרי קל, נשנוש, קינוח מתוק
+ 
+פלט: תפריט קצר (עד 3 שורות לכל חלק)
+ 
+בסוף: רשימת קניות מסודרת לפי קטגוריות (ירקות/מוצרי חלב/יבשים)</code></pre>
+    </article>
+    
+    <article class="prompt-card">
+      <h4>תרגיל 3 שימוש ב Markdown</h4>
+      <button class="copy-button" type="button" data-copy-label="העתק" data-copied-label="הועתק">העתק</button>
+      <pre><code># משימה:
+כתוב לי תוכנית לימוד לשבוע לקראת מבחן נהיגה עיוני (תיאוריה).
+
+## דרישות:
+- השתמש בכותרת לכל יום
+- מתחת לכותרת של כל יום, פרט מה עלי ללמוד ב־3 נקודות קצרות
+- בסוף הוסף רשימת בדיקה עצמית &#34;מה למדתי&#34;, הכוללת תיבות סימון</code></pre>
+    </article>
+    
+    <article class="prompt-card">
+      <h4>תרגיל 4 אוטומציה של פרומפטים</h4>
+      <button class="copy-button" type="button" data-copy-label="העתק" data-copied-label="הועתק">העתק</button>
+      <pre><code>עזור לי לכתוב פרומפט מובנה לכתיבת מאמר בנושא אנרגיה גרעינית.</code></pre>
+    </article>
+    
+  </div>
+  
+
+  
+  <div class="content-group markdown-body">
+    <h3>תשובות לתרגילים</h3>
+    <h4>תשובה לתרגיל (שאלה) 4 סעיף 2</h4>
+<p>הוסף להנחיה בקשה מפורשת לכתוב את הפרומפט בפורמט Markdown.</p>
+
+  </div>
+  
+
+  <p class="back-to-toc">
+    <a href="#table-of-contents">
+      <svg class="toc-list-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M9 6h11M9 12h11M9 18h11"/>
+        <path d="M4 6h1M4 12h1M4 18h1"/>
+      </svg>
+      <span>חזרה לתוכן העניינים</span>
+    </a>
+  </p>
+</section>
+
+<section class="book-section" id="chapter-04">
+  <h2>פרק 4 - הקוסם מארץ עוץ</h2>
+
+  
+
+  
+  <div class="content-group markdown-body links-group">
+    <h3>קישורים</h3>
+    <h4>כלים ואתרים המוזכרים בפרק</h4>
+<ul>
+<li><span class="external-link"><a href="https://www.google.com"><strong>Google</strong></a><a class="new-tab-link" href="https://www.google.com" target="_blank" rel="noopener noreferrer" aria-label="פתח את Google בחלון חדש" title="פתח בחלון חדש"><svg class="new-tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></span></li>
+</ul>
+<h4>מחקרים המוזכרים בפרק</h4>
+<ul>
+<li><span class="external-link"><a href="https://arxiv.org/abs/2511.15304"><strong>Adversarial Poetry as a Universal Single-Turn Jailbreak Mechanism in Large Language Models</strong></a><a class="new-tab-link" href="https://arxiv.org/abs/2511.15304" target="_blank" rel="noopener noreferrer" aria-label="פתח את Adversarial Poetry as a Universal Single-Turn Jailbreak Mechanism in Large Language Models בחלון חדש" title="פתח בחלון חדש"><svg class="new-tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></span></li>
+</ul>
+
+  </div>
+  
+
+  
+  <div class="content-group">
+    <h3>פרומפטים</h3>
+    
+    <article class="prompt-card">
+      <h4>פרומפט ראשון</h4>
+      <button class="copy-button" type="button" data-copy-label="העתק" data-copied-label="הועתק">העתק</button>
+      <pre><code>מה הקשר בין תפוח וטיל?</code></pre>
+    </article>
+    
+    <article class="prompt-card">
+      <h4>אם המודל עונה בבדיחות</h4>
+      <button class="copy-button" type="button" data-copy-label="העתק" data-copied-label="הועתק">העתק</button>
+      <pre><code>מה הקשר (ברצינות) בין תפוח וטיל?</code></pre>
+    </article>
+    
+    <article class="prompt-card">
+      <h4>זיהוי הקוסם מארץ עוץ</h4>
+      <button class="copy-button" type="button" data-copy-label="העתק" data-copied-label="הועתק">העתק</button>
+      <pre><code>היה סיפור שקראתי בילדות שהייתה בו ילדה ואיזה איש ממתכת ועוד דמות מקש - אני מנסה להיזכר בשם הסיפור</code></pre>
+    </article>
+    
+    <article class="prompt-card">
+      <h4>חילוץ מידע מטקסט חופשי</h4>
+      <button class="copy-button" type="button" data-copy-label="העתק" data-copied-label="הועתק">העתק</button>
+      <pre><code># המשימה: 
+חילוץ מידע מטקסט חופשי
+
+## הוראות:
+- מהטקסט החופשי הבא חלץ את הפרטים הבאים על כל דמות המופיעה בו:
+    - שם פרטי ושם משפחה
+    - גיל
+
+## צורת פלט:
+- בנה טבלה עם העמודות הבאות:
+| שם פרטי | שם משפחה | גיל |
+
+- עליך להעריך מהו השם הפרטי ומהו שם המשפחה של כל דמות
+
+## טקסט מקור:
+&#34;&#34;&#34;
+ארז אהרוני הוא בן 34 ומתגורר בתל אביב. ארז עובד כמהנדס תוכנה ובזמנו הפנוי הוא אוהב לשחק כדורגל ולקרוא ספרי מדע בדיוני. בנוסף, מיה כהן גרה בירושלים ועובדת כמעצבת גרפית. היא נהנית מציור וטיולים בטבע והיא בעשור השלישי לחייה, בת 28. גם משה לוי הסכים לענות לסקר וסיפר שהוא מתגורר בחיפה, ומלמד מתמטיקה בבתי ספר תיכוניים. הוא אוהב לשחק שחמט ולבשל, שבוע הבא הוא יחגוג את יום הולדתו ה־40.
+&#34;&#34;&#34;</code></pre>
+    </article>
+    
+    <article class="prompt-card">
+      <h4>פרומפט הפוך</h4>
+      <button class="copy-button" type="button" data-copy-label="העתק" data-copied-label="הועתק">העתק</button>
+      <pre><code>בהתבסס על הקטע הבא, אילו אירועים עלילתיים, מניעים של הדמויות או התרחשויות קודמות עשויים היו להוביל לסצנה הזאת? אילו מאפיינים ספרותיים מופיעים בקטע, ואיזה פרומפט יכול היה להפיק קטע בסגנון דומה?
+
+&gt; בכל ערב היה יוסף מניח כיסא נוסף ליד השולחן, אף שמרים לא שבה מאז אותו חורף. בלילה שבו פרחו עצי השקד מוקדם מן הרגיל, נמצאה על הכיסא מעטפה סגורה, ועליה נכתב בכתב ידה: &#34;אל תחכה לי במקום שבו נפרדנו&#34;.</code></pre>
+    </article>
+    
+    <article class="prompt-card">
+      <h4>תרגיל 4 הדמיית טמפרטורה</h4>
+      <button class="copy-button" type="button" data-copy-label="העתק" data-copied-label="הועתק">העתק</button>
+      <pre><code>אני רוצה להפוך את חדר העבודה שלי (קטן וצפוף) למקום שנעים לעבוד בו וגם נראה טוב.
+אילו שינויים מומלץ לעשות — ברמת סידור, ריהוט, תאורה, צבעים, ואחסון — כדי לשפר גם את הפרודוקטיביות וגם את האווירה?</code></pre>
+    </article>
+    
+  </div>
+  
+
+  
+  <div class="content-group markdown-body">
+    <h3>תשובות לתרגילים</h3>
+    <p><strong>בפרק זה אין תשובות קבועות לתרגילים - התשובות תלויות בבחירות שלך ובתוצאות ההתנסות.</strong></p>
+
+  </div>
+  
+
+  <p class="back-to-toc">
+    <a href="#table-of-contents">
+      <svg class="toc-list-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M9 6h11M9 12h11M9 18h11"/>
+        <path d="M4 6h1M4 12h1M4 18h1"/>
+      </svg>
+      <span>חזרה לתוכן העניינים</span>
+    </a>
+  </p>
+</section>
+
+<section class="book-section" id="chapter-05">
+  <h2>פרק 5 - סדר במושגים</h2>
+
+  
+
+  
+
+  
+
+  
+  <div class="content-group markdown-body">
+    <h3>תשובות לתרגילים</h3>
+    <h4>תשובה לתרגיל (שאלה) 1</h4>
+<p>חלון השיחה הוא הממשק שדרכו המשתמש כותב פרומפטים ומקבל תשובות. ה־LLM הוא הרכיב הלשוני בתוך המערכת שמעבד את הבקשה ומייצר את הפלט.</p>
+<h4>תשובה לתרגיל (שאלה) 2</h4>
+<p>המערכת או השירות הם המכלול השלם שאיתו המשתמש עובד. הם כוללים את ממשק השיחה, ה־LLM ורכיבים נוספים לניהול השיחה, שמירת מידע, הפעלת כלים ובקרה.</p>
+<h4>תשובה לתרגיל (שאלה) 3</h4>
+<p>שני תפקידים של ה־LLM בתוך המערכת הם:</p>
+<ul>
+<li>לעבד ולהבין את הבקשה שנשלחה אליו.</li>
+<li>לייצר פלט מתאים, כגון תשובה למשתמש או בקשה מהמערכת להפעיל כלי.</li>
+</ul>
+<h4>תשובה לתרגיל (שאלה) 4</h4>
+<p>לא. המערכת אוספת את הפרומפט שכתבת ויכולה לצרף אליו מידע נוסף, כגון היסטוריית השיחה, הוראות פנימיות ורשימת כלים זמינים. רק לאחר מכן הבקשה המורחבת מועברת אל ה־LLM.</p>
+<h4>תשובה לתרגיל (שאלה) 5</h4>
+<p>ה־LLM מייצר תשובות על סמך הדפוסים שלמד בזמן האימון שלו. במובן הזה, הוא &quot;יודע&quot; מידע שהיה קיים ונכון בזמן האימון, אך אין לו מעצמו גישה למידע עדכני שמתרחש עכשיו.</p>
+<p>לכן, למשל, הוא אינו יכול לדעת מה תהיה תחזית מזג האוויר למחר רק מתוך מה שלמד בעבר. אם ייאלץ לענות בלי להשתמש בכלי חיצוני שמספק מידע עדכני, הוא עלול להמציא מספר שנראה לו סביר על סמך הדפוסים שלמד.</p>
+<p>במקרה כזה, כדי לקבל תשובה מבוססת ועדכנית, המודל צריך לבקש מהמערכת להפעיל כלי חיצוני מתאים, לקבל ממנו את הנתונים העדכניים ורק לאחר מכן לנסח את התשובה.</p>
+
+  </div>
+  
+
+  <p class="back-to-toc">
+    <a href="#table-of-contents">
+      <svg class="toc-list-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M9 6h11M9 12h11M9 18h11"/>
+        <path d="M4 6h1M4 12h1M4 18h1"/>
+      </svg>
+      <span>חזרה לתוכן העניינים</span>
+    </a>
+  </p>
+</section>
+
+<section class="book-section" id="chapter-06">
+  <h2>פרק 6 - עבודה עם קבצים</h2>
+
+  
+  <div class="content-group">
+    <h3>חומרים להורדה</h3>
+    <ul class="downloads">
+      
+      <li><a href="../downloads/chapter-06/geography.txt" download>geography.txt</a></li>
+      
+      <li><a href="../downloads/chapter-06/history.txt" download>history.txt</a></li>
+      
+      <li><a href="../downloads/chapter-06/science.txt" download>science.txt</a></li>
+      
+      <li><a href="../downloads/chapter-06/work_hours.xlsx" download>work_hours.xlsx</a></li>
+      
+    </ul>
+  </div>
+  
+
+  
+  <div class="content-group markdown-body links-group">
+    <h3>קישורים</h3>
+    <h4>מחקרים המוזכרים בפרק</h4>
+<ul>
+<li><span class="external-link"><a href="https://arxiv.org/abs/2602.12247"><strong>ExtractBench: A Benchmark and Evaluation Methodology for Complex Structured Extraction</strong></a><a class="new-tab-link" href="https://arxiv.org/abs/2602.12247" target="_blank" rel="noopener noreferrer" aria-label="פתח את ExtractBench: A Benchmark and Evaluation Methodology for Complex Structured Extraction בחלון חדש" title="פתח בחלון חדש"><svg class="new-tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></span></li>
+<li><span class="external-link"><a href="https://arxiv.org/abs/2603.18652"><strong>Beyond String Matching: Semantic Evaluation of PDF Table Extraction</strong></a><a class="new-tab-link" href="https://arxiv.org/abs/2603.18652" target="_blank" rel="noopener noreferrer" aria-label="פתח את Beyond String Matching: Semantic Evaluation of PDF Table Extraction בחלון חדש" title="פתח בחלון חדש"><svg class="new-tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></span></li>
+<li><span class="external-link"><a href="https://www.scitepress.org/PublishedPapers/2020/91690/"><strong>Assessing the Impact of OCR Quality on Downstream NLP Tasks</strong></a><a class="new-tab-link" href="https://www.scitepress.org/PublishedPapers/2020/91690/" target="_blank" rel="noopener noreferrer" aria-label="פתח את Assessing the Impact of OCR Quality on Downstream NLP Tasks בחלון חדש" title="פתח בחלון חדש"><svg class="new-tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></span></li>
+<li><span class="external-link"><a href="https://aclanthology.org/2024.acl-long.182/"><strong>Attribute First, then Generate: Locally-attributable Grounded Text Generation</strong></a><a class="new-tab-link" href="https://aclanthology.org/2024.acl-long.182/" target="_blank" rel="noopener noreferrer" aria-label="פתח את Attribute First, then Generate: Locally-attributable Grounded Text Generation בחלון חדש" title="פתח בחלון חדש"><svg class="new-tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></span></li>
+</ul>
+
+  </div>
+  
+
+  
+  <div class="content-group">
+    <h3>פרומפטים</h3>
+    
+    <article class="prompt-card">
+      <h4>ניתוח מפורט של תמונה</h4>
+      <button class="copy-button" type="button" data-copy-label="העתק" data-copied-label="הועתק">העתק</button>
+      <pre><code>נתח את התמונה המצורפת ותן לי דוח מפורט ומובנה על מה שאתה רואה בה.</code></pre>
+    </article>
+    
+    <article class="prompt-card">
+      <h4>ביסוס תשובה על קבצים בלבד</h4>
+      <button class="copy-button" type="button" data-copy-label="העתק" data-copied-label="הועתק">העתק</button>
+      <pre><code># המשימה
+ענה על השאלות שלהלן בהתבסס **אך ורק** על המסמכים שצירפתי.
+
+## קלט
+מצורפים קבצים הכוללים נהלי עבודה פנימיים של הארגון.
+
+## השאלות
+...
+...
+
+## הנחיות מחייבות
+* השתמש רק במידע המופיע במסמכים המצורפים, ואל תיעזר בידע חיצוני או קודם.
+* אל תשלים פרטים ואל תנחש.
+* אם המידע הדרוש לתשובה אינו מופיע במסמכים, ציין זאת במפורש.
+* לכל טענה חשובה, ציין מקור מדויק: שם המסמך, סעיף, עמוד או ציטוט קצר.
+
+## פורמט התשובה
+* הצג כל שאלה בנפרד, ומתחתיה תשובה קצרה.
+* לאחר התשובה, הצג את הביסוס מתוך המסמכים.
+* כאשר התשובה כוללת מסקנה הנובעת מהמידע אך אינה מופיעה בו במפורש, סמן אותה כ־**מסקנה**.</code></pre>
+    </article>
+    
+    <article class="prompt-card">
+      <h4>טקסט להזנה</h4>
+      <button class="copy-button" type="button" data-copy-label="העתק" data-copied-label="הועתק">העתק</button>
+      <pre><code>בארגון נקבע כי כל בקשה לרכישת ציוד מחשוב חייבת באישור מנהל המחלקה ובאישור נוסף של מחלקת הכספים. ללא שני האישורים, הבקשה לא תטופל.</code></pre>
+    </article>
+    
+    <article class="prompt-card">
+      <h4>השאלה</h4>
+      <button class="copy-button" type="button" data-copy-label="העתק" data-copied-label="הועתק">העתק</button>
+      <pre><code>האם ניתן לאשר רכישת ציוד מחשוב ללא אישור מחלקת הכספים? נמק את תשובתך על סמך הטקסט בלבד.</code></pre>
+    </article>
+    
+    <article class="prompt-card">
+      <h4>תרגיל 2 אקסל לעומת צילום מסך</h4>
+      <button class="copy-button" type="button" data-copy-label="העתק" data-copied-label="הועתק">העתק</button>
+      <pre><code>מהי עלות השכר הכוללת של כל העובדים יחד? פרט כיצד חישבת את התוצאה.</code></pre>
+    </article>
+    
+    <article class="prompt-card">
+      <h4>תרגיל 3 עבודה עם ידע מוגבל מקבצים</h4>
+      <button class="copy-button" type="button" data-copy-label="העתק" data-copied-label="הועתק">העתק</button>
+      <pre><code>- מהי שנת הלידה של נפוליאון בונפרטה?
+- מהי טמפרטורת הרתיחה של מים בלחץ אטמוספרי רגיל?
+- מהי בירת צרפת?</code></pre>
+    </article>
+    
+  </div>
+  
+
+  
+  <div class="content-group markdown-body">
+    <h3>תשובות לתרגילים</h3>
+    <h4>תשובה לתרגיל (שאלה) 1</h4>
+<p>לפי הטקסט, לא ניתן לאשר רכישת ציוד מחשוב ללא אישור מחלקת הכספים. הטקסט קובע שנדרשים שני אישורים: אישור מנהל המחלקה ואישור מחלקת הכספים, וללא שניהם הבקשה לא תטופל.</p>
+<h4>תשובה לתרגיל (שאלה) 2</h4>
+<p>עלות השכר הכוללת היא <strong>1,145 ש&quot;ח</strong>:</p>
+<ul>
+<li>דנה: 8 × 50 = 400 ש&quot;ח</li>
+<li>יואב: 6 × 60 = 360 ש&quot;ח</li>
+<li>מיכל: 7 × 55 = 385 ש&quot;ח</li>
+<li>סך הכול: 400 + 360 + 385 = 1,145 ש&quot;ח</li>
+</ul>
+<h4>תשובה לתרגיל (שאלה) 3</h4>
+<p>לפי המידע שנכתב בקבצים לצורך התרגיל:</p>
+<ul>
+<li>שנת הלידה של נפוליאון בונפרטה: <strong>1775</strong></li>
+<li>טמפרטורת הרתיחה של מים בלחץ אטמוספרי רגיל: <strong>80 מעלות צלזיוס</strong></li>
+<li>בירת צרפת: <strong>ליון</strong></li>
+</ul>
+
+  </div>
+  
+
+  <p class="back-to-toc">
+    <a href="#table-of-contents">
+      <svg class="toc-list-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M9 6h11M9 12h11M9 18h11"/>
+        <path d="M4 6h1M4 12h1M4 18h1"/>
+      </svg>
+      <span>חזרה לתוכן העניינים</span>
+    </a>
+  </p>
+</section>
+
+<section class="book-section" id="chapter-07">
+  <h2>פרק 7 - חשיבה וחלון ההקשר (Context Window)</h2>
+
+  
+
+  
+  <div class="content-group markdown-body links-group">
+    <h3>קישורים</h3>
+    <h4>כלים ואתרים המוזכרים בפרק</h4>
+<ul>
+<li><span class="external-link"><a href="https://platform.openai.com/tokenizer"><strong>OpenAI Platform Tokenizer Playground</strong></a><a class="new-tab-link" href="https://platform.openai.com/tokenizer" target="_blank" rel="noopener noreferrer" aria-label="פתח את OpenAI Platform Tokenizer Playground בחלון חדש" title="פתח בחלון חדש"><svg class="new-tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></span></li>
+<li><span class="external-link"><a href="https://github.com/gkamradt/needle-in-a-haystack"><strong>Needle in a Haystack - GitHub</strong></a><a class="new-tab-link" href="https://github.com/gkamradt/needle-in-a-haystack" target="_blank" rel="noopener noreferrer" aria-label="פתח את Needle in a Haystack - GitHub בחלון חדש" title="פתח בחלון חדש"><svg class="new-tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></span></li>
+<li><span class="external-link"><a href="https://commoncrawl.org"><strong>Common Crawl</strong></a><a class="new-tab-link" href="https://commoncrawl.org" target="_blank" rel="noopener noreferrer" aria-label="פתח את Common Crawl בחלון חדש" title="פתח בחלון חדש"><svg class="new-tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></span></li>
+</ul>
+<h4>מחקרים ופרסומים המוזכרים בפרק</h4>
+<ul>
+<li><span class="external-link"><a href="https://openai.com/index/learning-to-reason-with-llms/"><strong>Learning to reason with LLMs (OpenAI)</strong></a><a class="new-tab-link" href="https://openai.com/index/learning-to-reason-with-llms/" target="_blank" rel="noopener noreferrer" aria-label="פתח את Learning to reason with LLMs (OpenAI) בחלון חדש" title="פתח בחלון חדש"><svg class="new-tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></span></li>
+<li><span class="external-link"><a href="https://arxiv.org/abs/2005.11401"><strong>Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks</strong></a><a class="new-tab-link" href="https://arxiv.org/abs/2005.11401" target="_blank" rel="noopener noreferrer" aria-label="פתח את Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks בחלון חדש" title="פתח בחלון חדש"><svg class="new-tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></span></li>
+<li><span class="external-link"><a href="https://arxiv.org/abs/2201.11903"><strong>Chain-of-Thought Prompting Elicits Reasoning in Large Language Models</strong></a><a class="new-tab-link" href="https://arxiv.org/abs/2201.11903" target="_blank" rel="noopener noreferrer" aria-label="פתח את Chain-of-Thought Prompting Elicits Reasoning in Large Language Models בחלון חדש" title="פתח בחלון חדש"><svg class="new-tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></span></li>
+<li><span class="external-link"><a href="https://arxiv.org/abs/2205.11916"><strong>Large Language Models are Zero-Shot Reasoners</strong></a><a class="new-tab-link" href="https://arxiv.org/abs/2205.11916" target="_blank" rel="noopener noreferrer" aria-label="פתח את Large Language Models are Zero-Shot Reasoners בחלון חדש" title="פתח בחלון חדש"><svg class="new-tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></span></li>
+<li><span class="external-link"><a href="https://arxiv.org/abs/1706.03762"><strong>Attention Is All You Need</strong></a><a class="new-tab-link" href="https://arxiv.org/abs/1706.03762" target="_blank" rel="noopener noreferrer" aria-label="פתח את Attention Is All You Need בחלון חדש" title="פתח בחלון חדש"><svg class="new-tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></span></li>
+<li><span class="external-link"><a href="https://www.trychroma.com/research/context-rot"><strong>Context Rot: How Increasing Input Tokens Impacts LLM Performance</strong></a><a class="new-tab-link" href="https://www.trychroma.com/research/context-rot" target="_blank" rel="noopener noreferrer" aria-label="פתח את Context Rot: How Increasing Input Tokens Impacts LLM Performance בחלון חדש" title="פתח בחלון חדש"><svg class="new-tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></span></li>
+<li><span class="external-link"><a href="https://arxiv.org/abs/2510.05381"><strong>Context Length Alone Hurts LLM Performance Despite Perfect Retrieval</strong></a><a class="new-tab-link" href="https://arxiv.org/abs/2510.05381" target="_blank" rel="noopener noreferrer" aria-label="פתח את Context Length Alone Hurts LLM Performance Despite Perfect Retrieval בחלון חדש" title="פתח בחלון חדש"><svg class="new-tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></span></li>
+<li><span class="external-link"><a href="https://arxiv.org/abs/2404.03302v4"><strong>How Easily do Irrelevant Inputs Skew the Responses of Large Language Models?</strong></a><a class="new-tab-link" href="https://arxiv.org/abs/2404.03302v4" target="_blank" rel="noopener noreferrer" aria-label="פתח את How Easily do Irrelevant Inputs Skew the Responses of Large Language Models? בחלון חדש" title="פתח בחלון חדש"><svg class="new-tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></span></li>
+<li><span class="external-link"><a href="https://arxiv.org/abs/2601.07226v1"><strong>Lost in the Noise: How Reasoning Models Fail with Contextual Distractors</strong></a><a class="new-tab-link" href="https://arxiv.org/abs/2601.07226v1" target="_blank" rel="noopener noreferrer" aria-label="פתח את Lost in the Noise: How Reasoning Models Fail with Contextual Distractors בחלון חדש" title="פתח בחלון חדש"><svg class="new-tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></span></li>
+<li><span class="external-link"><a href="https://aclanthology.org/2024.emnlp-main.811"><strong>LLM Task Interference: An Initial Study on the Impact of Task-Switch in Conversational History</strong></a><a class="new-tab-link" href="https://aclanthology.org/2024.emnlp-main.811" target="_blank" rel="noopener noreferrer" aria-label="פתח את LLM Task Interference: An Initial Study on the Impact of Task-Switch in Conversational History בחלון חדש" title="פתח בחלון חדש"><svg class="new-tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></span></li>
+<li><span class="external-link"><a href="https://arxiv.org/abs/2307.03172"><strong>Lost in the Middle: How Language Models Use Long Contexts</strong></a><a class="new-tab-link" href="https://arxiv.org/abs/2307.03172" target="_blank" rel="noopener noreferrer" aria-label="פתח את Lost in the Middle: How Language Models Use Long Contexts בחלון חדש" title="פתח בחלון חדש"><svg class="new-tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></span></li>
+<li><span class="external-link"><a href="https://arxiv.org/abs/2404.06654"><strong>RULER: What's the Real Context Size of Your Long-Context Language Models?</strong></a><a class="new-tab-link" href="https://arxiv.org/abs/2404.06654" target="_blank" rel="noopener noreferrer" aria-label="פתח את RULER: What's the Real Context Size of Your Long-Context Language Models? בחלון חדש" title="פתח בחלון חדש"><svg class="new-tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></span></li>
+<li><span class="external-link"><a href="https://arxiv.org/abs/2410.04422"><strong>Long-context Language Models Fail in Basic Retrieval Tasks Without Sufficient Reasoning Steps</strong></a><a class="new-tab-link" href="https://arxiv.org/abs/2410.04422" target="_blank" rel="noopener noreferrer" aria-label="פתח את Long-context Language Models Fail in Basic Retrieval Tasks Without Sufficient Reasoning Steps בחלון חדש" title="פתח בחלון חדש"><svg class="new-tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></span></li>
+<li><span class="external-link"><a href="https://arxiv.org/abs/2501.08248"><strong>Eliciting In-context Retrieval and Reasoning for Long-context Large Language Models</strong></a><a class="new-tab-link" href="https://arxiv.org/abs/2501.08248" target="_blank" rel="noopener noreferrer" aria-label="פתח את Eliciting In-context Retrieval and Reasoning for Long-context Large Language Models בחלון חדש" title="פתח בחלון חדש"><svg class="new-tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></span></li>
+<li><span class="external-link"><a href="https://arxiv.org/abs/2502.05167"><strong>NoLiMa: Long-Context Evaluation Beyond Literal Matching</strong></a><a class="new-tab-link" href="https://arxiv.org/abs/2502.05167" target="_blank" rel="noopener noreferrer" aria-label="פתח את NoLiMa: Long-Context Evaluation Beyond Literal Matching בחלון חדש" title="פתח בחלון חדש"><svg class="new-tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></span></li>
+<li><span class="external-link"><a href="https://arxiv.org/abs/2406.14673"><strong>Insights into LLM Long-Context Failures: When Transformers Know but Don't Tell</strong></a><a class="new-tab-link" href="https://arxiv.org/abs/2406.14673" target="_blank" rel="noopener noreferrer" aria-label="פתח את Insights into LLM Long-Context Failures: When Transformers Know but Don't Tell בחלון חדש" title="פתח בחלון חדש"><svg class="new-tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></span></li>
+<li><span class="external-link"><a href="https://arxiv.org/abs/2410.02694"><strong>HELMET: How to Evaluate Long-Context Language Models Effectively and Thoroughly</strong></a><a class="new-tab-link" href="https://arxiv.org/abs/2410.02694" target="_blank" rel="noopener noreferrer" aria-label="פתח את HELMET: How to Evaluate Long-Context Language Models Effectively and Thoroughly בחלון חדש" title="פתח בחלון חדש"><svg class="new-tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></span></li>
+<li><span class="external-link"><a href="https://arxiv.org/abs/2402.14116"><strong>FanOutQA: A Multi-Hop, Multi-Document Question Answering Benchmark for Large Language Models</strong></a><a class="new-tab-link" href="https://arxiv.org/abs/2402.14116" target="_blank" rel="noopener noreferrer" aria-label="פתח את FanOutQA: A Multi-Hop, Multi-Document Question Answering Benchmark for Large Language Models בחלון חדש" title="פתח בחלון חדש"><svg class="new-tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></span></li>
+<li><span class="external-link"><a href="https://arxiv.org/abs/2506.02000"><strong>NovelHopQA: Diagnosing Multi-Hop Reasoning Failures in Long Narrative Contexts</strong></a><a class="new-tab-link" href="https://arxiv.org/abs/2506.02000" target="_blank" rel="noopener noreferrer" aria-label="פתח את NovelHopQA: Diagnosing Multi-Hop Reasoning Failures in Long Narrative Contexts בחלון חדש" title="פתח בחלון חדש"><svg class="new-tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></span></li>
+<li><span class="external-link"><a href="https://aclanthology.org/2025.findings-naacl.99"><strong>Open Domain Question Answering with Conflicting Contexts</strong></a><a class="new-tab-link" href="https://aclanthology.org/2025.findings-naacl.99" target="_blank" rel="noopener noreferrer" aria-label="פתח את Open Domain Question Answering with Conflicting Contexts בחלון חדש" title="פתח בחלון חדש"><svg class="new-tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></span></li>
+<li><span class="external-link"><a href="https://openreview.net/forum?id=5t7DtLwTVC"><strong>WikiContradict: A Benchmark for Evaluating LLMs on Real-World Knowledge Conflicts from Wikipedia</strong></a><a class="new-tab-link" href="https://openreview.net/forum?id=5t7DtLwTVC" target="_blank" rel="noopener noreferrer" aria-label="פתח את WikiContradict: A Benchmark for Evaluating LLMs on Real-World Knowledge Conflicts from Wikipedia בחלון חדש" title="פתח בחלון חדש"><svg class="new-tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></span></li>
+<li><span class="external-link"><a href="https://arxiv.org/abs/2310.00935"><strong>Resolving Knowledge Conflicts in Large Language Models</strong></a><a class="new-tab-link" href="https://arxiv.org/abs/2310.00935" target="_blank" rel="noopener noreferrer" aria-label="פתח את Resolving Knowledge Conflicts in Large Language Models בחלון חדש" title="פתח בחלון חדש"><svg class="new-tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></span></li>
+<li><span class="external-link"><a href="https://arxiv.org/abs/2404.16032"><strong>Studying Large Language Model Behaviors Under Context-Memory Conflicts With Real Documents</strong></a><a class="new-tab-link" href="https://arxiv.org/abs/2404.16032" target="_blank" rel="noopener noreferrer" aria-label="פתח את Studying Large Language Model Behaviors Under Context-Memory Conflicts With Real Documents בחלון חדש" title="פתח בחלון חדש"><svg class="new-tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></span></li>
+<li><span class="external-link"><a href="https://arxiv.org/abs/2506.06485"><strong>Task Matters: Knowledge Requirements Shape LLM Responses to Context-Memory Conflict</strong></a><a class="new-tab-link" href="https://arxiv.org/abs/2506.06485" target="_blank" rel="noopener noreferrer" aria-label="פתח את Task Matters: Knowledge Requirements Shape LLM Responses to Context-Memory Conflict בחלון חדש" title="פתח בחלון חדש"><svg class="new-tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></span></li>
+<li><span class="external-link"><a href="https://arxiv.org/abs/2410.03727"><strong>FaithEval: Can Your Language Model Stay Faithful to Context, Even If &quot;The Moon is Made of Marshmallows&quot;</strong></a><a class="new-tab-link" href="https://arxiv.org/abs/2410.03727" target="_blank" rel="noopener noreferrer" aria-label="פתח את FaithEval: Can Your Language Model Stay Faithful to Context, Even If &quot;The Moon is Made of Marshmallows&quot; בחלון חדש" title="פתח בחלון חדש"><svg class="new-tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></span></li>
+<li><span class="external-link"><a href="https://arxiv.org/abs/2505.06120"><strong>LLMs Get Lost In Multi-Turn Conversation</strong></a><a class="new-tab-link" href="https://arxiv.org/abs/2505.06120" target="_blank" rel="noopener noreferrer" aria-label="פתח את LLMs Get Lost In Multi-Turn Conversation בחלון חדש" title="פתח בחלון חדש"><svg class="new-tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></span></li>
+<li><span class="external-link"><a href="https://arxiv.org/abs/2509.17766"><strong>A State-Update Prompting Strategy for Efficient and Robust Multi-turn Dialogue</strong></a><a class="new-tab-link" href="https://arxiv.org/abs/2509.17766" target="_blank" rel="noopener noreferrer" aria-label="פתח את A State-Update Prompting Strategy for Efficient and Robust Multi-turn Dialogue בחלון חדש" title="פתח בחלון חדש"><svg class="new-tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></span></li>
+<li><span class="external-link"><a href="https://aclanthology.org/2026.findings-eacl.254"><strong>We Are What We Repeatedly Do: Improving Long Context Instruction Following</strong></a><a class="new-tab-link" href="https://aclanthology.org/2026.findings-eacl.254" target="_blank" rel="noopener noreferrer" aria-label="פתח את We Are What We Repeatedly Do: Improving Long Context Instruction Following בחלון חדש" title="פתח בחלון חדש"><svg class="new-tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></span></li>
+<li><span class="external-link"><a href="https://arxiv.org/abs/2506.13734"><strong>Instruction Following by Principled Boosting Attention of Large Language Models</strong></a><a class="new-tab-link" href="https://arxiv.org/abs/2506.13734" target="_blank" rel="noopener noreferrer" aria-label="פתח את Instruction Following by Principled Boosting Attention of Large Language Models בחלון חדש" title="פתח בחלון חדש"><svg class="new-tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></span></li>
+<li><span class="external-link"><a href="https://openreview.net/forum?id=Gg1aPETCL6"><strong>SinkTrack: Attention Sink based Context Anchoring for Large Language Models</strong></a><a class="new-tab-link" href="https://openreview.net/forum?id=Gg1aPETCL6" target="_blank" rel="noopener noreferrer" aria-label="פתח את SinkTrack: Attention Sink based Context Anchoring for Large Language Models בחלון חדש" title="פתח בחלון חדש"><svg class="new-tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></span></li>
+</ul>
+
+  </div>
+  
+
+  
+  <div class="content-group">
+    <h3>פרומפטים</h3>
+    
+    <article class="prompt-card">
+      <h4>ניסוי פלט ארוך</h4>
+      <button class="copy-button" type="button" data-copy-label="העתק" data-copied-label="הועתק">העתק</button>
+      <pre><code>כתוב נובלת מסתורין באורך של **לא פחות מ־20,000 מילים**, העוסקת בספרנית בצפת שמוצאת בתוך ספר ישן מכתב שלא נשלח מעולם, ויוצאת לגלות למי נועד ומהו הסוד המשפחתי שהוא מסתיר.
+
+בנה עלילה שלמה המחולקת לפרקים, וכתוב אותה בסגנון הכתיבה המוכר של ש&#34;י עגנון. אל תשאל שאלות ואל תציג תכנון מקדים; כאשר חסר פרט כלשהו, קבע אותו בעצמך.
+
+צור את הנובלה כקובץ Word (DOCX), ואל תציג את גוף הסיפור בשיחה. לפני מסירת הקובץ, ודא שהוא מכיל לפחות 20,000 מילים. בשיחה עצמה הצג רק הודעה קצרה שהקובץ הוכן.</code></pre>
+    </article>
+    
+  </div>
+  
+
+  
+  <div class="content-group markdown-body">
+    <h3>תשובות לתרגילים</h3>
+    <h4>תשובה לתרגיל (שאלה) 1</h4>
+<p>ה<strong>הקשר</strong> הוא כל המידע שהמערכת מעמידה לרשות ה־LLM לצורך עיבוד הפנייה הנוכחית. הוא עשוי לכלול את הבקשה האחרונה, היסטוריית השיחה, הוראות מערכת, מידע מקבצים ומידע נוסף. לכן הבקשה האחרונה היא רק חלק מן ההקשר, ולא ההקשר כולו.</p>
+<h4>תשובה לתרגיל (שאלה) 3</h4>
+<p><strong>חלון ההקשר</strong> הוא המגבלה המרבית על כמות הטוקנים שהמודל יכול לעבד במסגרת בקשה אחת, כולל המידע שנשלח אליו והמקום הדרוש להפקת התגובה. כאשר שיחה או מסמך חורגים מן המקום הזמין, המערכת עשויה להשמיט חלקים ישנים, לסכם אותם או לבחור רק חלק מן המידע לצירוף להקשר. כתוצאה מכך מידע חשוב עלול לא להגיע למודל בבקשה שבה הוא דרוש.</p>
+<h4>תשובה לתרגיל (שאלה) 4</h4>
+<ul>
+<li><strong>תו</strong> הוא סימן כתוב בסיסי, כגון אות, ספרה, סימן פיסוק או רווח.</li>
+<li><strong>מילה</strong> היא יחידת משמעות לשונית עבור בני אדם.</li>
+<li><strong>טוקן</strong> הוא יחידת העיבוד שבה המודל עובד. טוקן יכול להיות מילה שלמה, חלק ממילה, סימן פיסוק, רווח או שילוב שלהם.</li>
+</ul>
+<p>ההבדל חשוב משום שמגבלות כמו חלון ההקשר ומגבלת הפלט נמדדות בטוקנים, ולא במספר המילים או התווים. אותו מספר מילים יכול לכן לתפוס כמות שונה של מקום בחלון ההקשר בשפות ובטוקנייזרים שונים.</p>
+<h4>תשובה לתרגיל (שאלה) 6</h4>
+<p><strong>Embedding</strong> הוא ייצוג מספרי של משמעות. מערכת שליפה יכולה לחלק קובץ ארוך לקטעים, ליצור ייצוג כזה לכל קטע וגם לבקשה של המשתמש, ולאתר קטעים שהייצוג שלהם קרוב מבחינה סמנטית לבקשה. לאחר מכן היא מצרפת להקשר רק את הקטעים שנמצאו רלוונטיים.</p>
+<p>הסיכון הוא שהמערכת עלולה לבחור קטעים לא מתאימים או להחמיץ קטע חשוב. במקרה כזה המודל יקבל הקשר חלקי או לא נכון, והתשובה עלולה להיות חלקית או שגויה.</p>
+<h4>תשובה לתרגיל (שאלה) 7</h4>
+<p><strong>שרשרת חשיבה (Chain of Thought)</strong> היא הפקת צעדי ביניים בדרך לתשובה. היא עשויה לסייע במשימות מורכבות הדורשות חישוב, הסקה, פירוק לבעיות משנה או בחינה של כמה אפשרויות. במשימות פשוטות היא עלולה להיות בזבזנית, משום שהיא צורכת זמן וטוקנים נוספים בלי בהכרח לשפר את התוצאה.</p>
+<h4>תשובה לתרגיל (שאלה) 8</h4>
+<p><strong>ריקבון הקשר (Context Rot)</strong> הוא מצב שבו איכות ביצועי המודל נשחקת ככל שההקשר מתארך, גם כאשר המידע הדרוש עדיין נמצא בתוך ההקשר ולא חרג ממגבלת חלון ההקשר.</p>
+<h4>תשובה לתרגיל (שאלה) 9</h4>
+<p><strong>Lost in the Middle</strong> היא תופעה שבה מודלים נוטים להשתמש טוב יותר במידע שמופיע בתחילת ההקשר או בסופו, אך מתקשים יותר לאתר מידע חשוב או להסתמך עליו כאשר הוא נמצא באמצע הקשר ארוך.</p>
+<h4>תשובה לתרגיל (שאלה) 10</h4>
+<p>דרך מעשית אחת היא להפנות את המודל במפורש לשלושת הסעיפים החשובים, למשל לפי מספרי הסעיפים או העמודים, ולבקש ממנו להתבסס עליהם. כך מנגנון השליפה מקבל הנחיה ממוקדת יותר ופוחת הסיכון שהקטעים החשובים לא ייכנסו להקשר.</p>
+<h4>תשובה לתרגיל (שאלה) 11</h4>
+<p><strong>הזיה הקשרית</strong> היא מצב שבו התשובה אינה נאמנה למידע שנמצא בהקשר והמודל מוסיף או מעדיף מידע שאינו נתמך בו. לדוגמה, אם במסמך כתוב שהשמיים ירוקים והמשימה דורשת לענות לפי המסמך בלבד, אך המודל עונה שהשמיים כחולים.</p>
+<p><strong>חוסר עקביות פנימית</strong> הוא מצב שבו חלקים שונים באותה תשובה או לאורך השיחה אינם מתיישבים זה עם זה. לדוגמה, בתחילת תשובה המודל קובע שפגישה מתקיימת ביום שני ובהמשך אותה תשובה מתייחס אליה כאילו היא מתקיימת ביום שלישי.</p>
+<h4>תשובה לתרגיל (שאלה) 13</h4>
+<ol>
+<li>בהקשר של <strong>120 אלף טוקנים</strong>, נשארים בחלון ההקשר 80 אלף טוקנים. מאחר שמגבלת הפלט היא 64 אלף, הפלט המרבי הוא <strong>64 אלף טוקנים</strong>.</li>
+<li>בהקשר של <strong>180 אלף טוקנים</strong>, נשארים בחלון ההקשר 20 אלף טוקנים, ולכן הפלט המרבי הוא <strong>20 אלף טוקנים</strong>.</li>
+<li>במקרה הראשון, אם 8,000 טוקנים משמשים להיסק פנימי, נשארים לתשובה הגלויה <strong>56 אלף טוקנים</strong>.</li>
+<li>במקרה השני, אם 8,000 טוקנים משמשים להיסק פנימי, נשארים לתשובה הגלויה <strong>12 אלף טוקנים</strong>.</li>
+</ol>
+<h4>תשובה לתרגיל (שאלה) 14</h4>
+<p>ככל שהפלט מתארך, כל טוקן חדש נוצר על סמך הקלט המקורי וגם על סמך כל הטוקנים שהמודל כבר הפיק לפניו. לכן גם במהלך יצירת התגובה ההקשר הולך ומתארך, והמודל עלול להתקשות יותר לשמור על אותה רמת מיקוד, עקביות וציות להנחיות לאורך כל הפלט. למשל, בפלט ארוך מאוד עלול להופיע <strong>חוסר עקביות פנימית</strong> בין חלקים שונים של התשובה.</p>
+
+  </div>
+  
+
+  <p class="back-to-toc">
+    <a href="#table-of-contents">
+      <svg class="toc-list-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M9 6h11M9 12h11M9 18h11"/>
+        <path d="M4 6h1M4 12h1M4 18h1"/>
+      </svg>
+      <span>חזרה לתוכן העניינים</span>
+    </a>
+  </p>
+</section>
+
+<section class="book-section" id="chapter-08">
+  <h2>פרק 8 - כללים לעבודה עם הקשר ארוך</h2>
+
+  
+
+  
+  <div class="content-group markdown-body links-group">
+    <h3>קישורים</h3>
+    <h4>מחקרים ופרסומים המוזכרים בפרק</h4>
+<ul>
+<li><span class="external-link"><a href="https://arxiv.org/abs/2412.15605"><strong>Don't Do RAG: When Cache-Augmented Generation Is All You Need for Knowledge Tasks</strong></a><a class="new-tab-link" href="https://arxiv.org/abs/2412.15605" target="_blank" rel="noopener noreferrer" aria-label="פתח את Don't Do RAG: When Cache-Augmented Generation Is All You Need for Knowledge Tasks בחלון חדש" title="פתח בחלון חדש"><svg class="new-tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></span></li>
+<li><span class="external-link"><a href="https://arxiv.org/abs/2205.10625"><strong>Least-to-Most Prompting Enables Complex Reasoning in Large Language Models</strong></a><a class="new-tab-link" href="https://arxiv.org/abs/2205.10625" target="_blank" rel="noopener noreferrer" aria-label="פתח את Least-to-Most Prompting Enables Complex Reasoning in Large Language Models בחלון חדש" title="פתח בחלון חדש"><svg class="new-tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></span></li>
+<li><span class="external-link"><a href="https://arxiv.org/abs/2305.04091"><strong>Plan-and-Solve Prompting: Improving Zero-Shot Chain-of-Thought Reasoning by Large Language Models</strong></a><a class="new-tab-link" href="https://arxiv.org/abs/2305.04091" target="_blank" rel="noopener noreferrer" aria-label="פתח את Plan-and-Solve Prompting: Improving Zero-Shot Chain-of-Thought Reasoning by Large Language Models בחלון חדש" title="פתח בחלון חדש"><svg class="new-tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></span></li>
+<li><span class="external-link"><a href="https://arxiv.org/abs/2310.06117"><strong>Take a Step Back: Evoking Reasoning via Abstraction in Large Language Models</strong></a><a class="new-tab-link" href="https://arxiv.org/abs/2310.06117" target="_blank" rel="noopener noreferrer" aria-label="פתח את Take a Step Back: Evoking Reasoning via Abstraction in Large Language Models בחלון חדש" title="פתח בחלון חדש"><svg class="new-tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></span></li>
+</ul>
+
+  </div>
+  
+
+  
+  <div class="content-group">
+    <h3>פרומפטים</h3>
+    
+    <article class="prompt-card">
+      <h4>פירוק משימה כתיבת שאלות למבחן</h4>
+      <button class="copy-button" type="button" data-copy-label="העתק" data-copied-label="הועתק">העתק</button>
+      <pre><code># המטרה: כתיבת שאלות למבחן על ספר בראשית
+הכן שאלות למבחן בתנ&#34;ך על ספר בראשית, המתאימות לתלמידי כיתה י&#39;.
+
+## שלבי העבודה
+1. עבור על ספר בראשית וזהה את הנושאים, האירועים, הדמויות והרעיונות המרכזיים שאפשר לבדוק במבחן. 
+2. הכן 15 שאלות המתאימות לרמת תלמידי כיתה י&#39;. שלב שאלות הבודקות ידע, הבנה, השוואה והסקת מסקנות. 
+3. קרא את השאלות שכתבת ובדוק אם קיימות ביניהן כפילויות או שאלות הבודקות למעשה את אותו הידע. אם מצאת כפילות, השאר את השאלה הברורה או המועילה יותר והסר את האחרת.
+4. לכל שאלה שנותרה, כתוב שיקול דידקטי קצר המסביר מדוע בחרת בה ומה היא נועדה לבדוק.
+5. ענה על כל השאלות. 
+6. בחן יחד את השאלות ואת התשובות שיצרת, ובדוק אם קיימת ביניהן חפיפה משמעותית בנושאים או בידע הנדרש למענה. אם שתי שאלות בודקות למעשה את אותו תוכן, השאר את השאלה המעמיקה והסר את האחרת ואת השיקול הדידקטי שנכתב עבורה.
+
+## פלט מבוקש
+הצג **רק** את השאלות שנותרו לאחר שלב 6.
+מתחת לכל שאלה הצג את השיקול הדידקטי שנכתב עבורה בשלב 4.</code></pre>
+    </article>
+    
+    <article class="prompt-card">
+      <h4>צעד לאחור בחירת מערכת לניהול משימות</h4>
+      <button class="copy-button" type="button" data-copy-label="העתק" data-copied-label="הועתק">העתק</button>
+      <pre><code># המטרה: בחירת מערכת לניהול משימות לעסק קטן
+
+## פרטי המקרה
+- מערכת א&#39; פשוטה וזולה, אך כוללת מעט אפשרויות אוטומציה ואינה מתחברת למערכות אחרות שבהן העסק משתמש.
+- מערכת ב&#39; יקרה ומורכבת יותר, אך כוללת אוטומציות וחיבורים למערכות נוספות ודורשת זמן להטמעה וללמידה.
+
+## שלבי העבודה
+1. לפני שתבחן את שתי המערכות, ציין מהם העקרונות הכלליים שחשוב לבדוק כאשר בוחרים מערכת לניהול משימות לעסק קטן.
+2. בחן כל אחת מהמערכות לפי העקרונות שציינת.
+3. המלץ על המערכת המתאימה יותר והסבר בקצרה מדוע.
+
+## פלט מבוקש
+הצג:
+1. את העקרונות הכלליים שבחרת.
+2. השוואה קצרה בין המערכות על פי אותם עקרונות.
+3. את ההמלצה הסופית.</code></pre>
+    </article>
+    
+  </div>
+  
+
+  
+  <div class="content-group markdown-body">
+    <h3>תשובות לתרגילים</h3>
+    <p><strong>בפרק זה אין תשובות קבועות לתרגילים - התשובות תלויות בבחירות שלך ובתוצאות ההתנסות.</strong></p>
+
+  </div>
+  
+
+  <p class="back-to-toc">
+    <a href="#table-of-contents">
+      <svg class="toc-list-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M9 6h11M9 12h11M9 18h11"/>
+        <path d="M4 6h1M4 12h1M4 18h1"/>
+      </svg>
+      <span>חזרה לתוכן העניינים</span>
+    </a>
+  </p>
+</section>
+
+<section class="book-section" id="chapter-09">
+  <h2>פרק 9 - כובע המבקר</h2>
+
+  
+
+  
+  <div class="content-group markdown-body links-group">
+    <h3>קישורים</h3>
+    <h4>מסמכים ומסגרות המוזכרים בפרק</h4>
+<ul>
+<li><span class="external-link"><a href="https://www.nist.gov/itl/ai-risk-management-framework"><strong>NIST AI Risk Management Framework</strong></a><a class="new-tab-link" href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener noreferrer" aria-label="פתח את NIST AI Risk Management Framework בחלון חדש" title="פתח בחלון חדש"><svg class="new-tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></span></li>
+</ul>
+<h4>מחקרים המוזכרים בפרק</h4>
+<ul>
+<li><span class="external-link"><a href="https://arxiv.org/abs/2404.13076"><strong>LLM Evaluators Recognize and Favor Their Own Generations</strong></a><a class="new-tab-link" href="https://arxiv.org/abs/2404.13076" target="_blank" rel="noopener noreferrer" aria-label="פתח את LLM Evaluators Recognize and Favor Their Own Generations בחלון חדש" title="פתח בחלון חדש"><svg class="new-tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></span></li>
+<li><span class="external-link"><a href="https://doi.org/10.1038/s41598-023-41032-5"><strong>Fabrication and errors in the bibliographic citations generated by ChatGPT</strong></a><a class="new-tab-link" href="https://doi.org/10.1038/s41598-023-41032-5" target="_blank" rel="noopener noreferrer" aria-label="פתח את Fabrication and errors in the bibliographic citations generated by ChatGPT בחלון חדש" title="פתח בחלון חדש"><svg class="new-tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></span></li>
+<li><span class="external-link"><a href="https://arxiv.org/abs/2303.17651"><strong>Self-Refine: Iterative Refinement with Self-Feedback</strong></a><a class="new-tab-link" href="https://arxiv.org/abs/2303.17651" target="_blank" rel="noopener noreferrer" aria-label="פתח את Self-Refine: Iterative Refinement with Self-Feedback בחלון חדש" title="פתח בחלון חדש"><svg class="new-tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></span></li>
+<li><span class="external-link"><a href="https://arxiv.org/abs/2309.11495"><strong>Chain-of-Verification Reduces Hallucination in Large Language Models</strong></a><a class="new-tab-link" href="https://arxiv.org/abs/2309.11495" target="_blank" rel="noopener noreferrer" aria-label="פתח את Chain-of-Verification Reduces Hallucination in Large Language Models בחלון חדש" title="פתח בחלון חדש"><svg class="new-tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></span></li>
+</ul>
+
+  </div>
+  
+
+  
+  <div class="content-group">
+    <h3>פרומפטים</h3>
+    
+    <article class="prompt-card">
+      <h4>ניקוי וליטוש של טקסט</h4>
+      <button class="copy-button" type="button" data-copy-label="העתק" data-copied-label="הועתק">העתק</button>
+      <pre><code># המטרה: ניקוי וליטוש של טקסט
+
+## הוראות
+עבור על הטקסט הבא ובצע ניקוי וליטוש לפי הכללים הבאים.
+
+**מותר לך:**
+1. להסיר כפילויות בולטות וחזרות שמכבידות על הקריאה.
+2. לתקן שגיאות לשון בסיסיות.
+3. לקצר ניסוחים מסורבלים ולשפר את הקריאוּת הכללית.
+4. לאחד מונחים כאשר ברור שהם מתייחסים לאותו רעיון.
+
+**אסור לך:**
+1. לבדוק עובדות, לאמת מקורות או להעריך אם המקורות תומכים בטענות.
+2. לבדוק את השלמות הלוגית של משפטים וטיעונים.
+3. לשנות את משמעות הטענות.
+4. להוסיף מידע חדש.
+5. למחוק הסתייגויות חשובות.
+6. לשנות נתונים, שמות, תאריכים, מקורות או ציטוטים.
+7. לבצע שכתוב יצירתי, פרשני או מבני.
+
+## פלט מבוקש
+הצג גרסה נקייה יותר של הטקסט.
+
+## הטקסט לניקוי
+&#34;&#34;&#34;{הדבק כאן את הטקסט או צרף את הקובץ לבדיקה}&#34;&#34;&#34;</code></pre>
+    </article>
+    
+    <article class="prompt-card">
+      <h4>בדיקת סף לתשובה</h4>
+      <button class="copy-button" type="button" data-copy-label="העתק" data-copied-label="הועתק">העתק</button>
+      <pre><code># המטרה: בדיקת סף לתשובה
+
+## הוראות
+השווה בין הפרומפט המקורי לבין התשובה שהתקבלה.
+קבע **רק** אם יש טעם להמשיך לעבוד עם התשובה או שעדיף לבקש תשובה חדשה.
+לשם כך דרג את איכות התשובה מ־1 עד 10. אם התשובה היא באיכות 8 ומעלה - הצע להמשיך עם התשובה. אחרת הצע לקבל תשובה חדשה.
+**בדוק:**
+1. האם התשובה עונה על המשימה המרכזית?
+2. האם כל חלקי הבקשה קיבלו מענה בסיסי?
+3. האם נשמרו המבנה, הטון, האורך והפורמט שנדרשו?
+4. האם התשובה נמנעה ממה שנאסר?
+5. האם יש חריגה ברורה שמוציאה את התשובה מהמסגרת של הבקשה?
+
+## פלט מבוקש
+הצג תשובה אחת בלבד:
+- כן — ניתן להמשיך לבדיקת העובדות
+- לא — יש לבקש תשובה חדשה
+
+## הפרומפט המקורי
+&#34;&#34;&#34;{הדבק כאן את הפרומפט המקורי}&#34;&#34;&#34;
+
+## התשובה לבדיקה
+&#34;&#34;&#34;{הדבק כאן את התשובה לבדיקה או צרף קובץ}&#34;&#34;&#34;</code></pre>
+    </article>
+    
+    <article class="prompt-card">
+      <h4>שיפור פרומפט לאחר כשל בבדיקת סף</h4>
+      <button class="copy-button" type="button" data-copy-label="העתק" data-copied-label="הועתק">העתק</button>
+      <pre><code># המטרה: שיפור פרומפט
+- נתח מדוע התשובה לא עברה את בדיקת הסף.
+- המטרה היא לזהות את מקורות הכשל ולהכין פרומפט טוב יותר לקבלת תשובה חדשה.
+
+## בדוק:
+1. אילו חלקים מהבקשה לא בוצעו או בוצעו רק באופן חלקי?
+2. האם ההוראות היו לא ברורות או לא ממוקדות?
+3. האם היו מגבלות, דרישות או תנאי ביצוע שהיה צריך להסיר או להגדיר בצורה ברורה יותר?
+
+## הצג:
+1. רשימה מתומצתת של הסיבות לכשל.
+2. המלצות ממוקדות לשיפור הבקשה.
+3. נוסח מוצע לפרומפט חדש.
+
+אם הפרומפט נמצא תקין, אך ייתכן שהבעיה קשורה במקורות שצירפתי - בקש את המקורות לבחינה.</code></pre>
+    </article>
+    
+    <article class="prompt-card">
+      <h4>איתור טענות עובדתיות ובדיקת התמיכה</h4>
+      <button class="copy-button" type="button" data-copy-label="העתק" data-copied-label="הועתק">העתק</button>
+      <pre><code># המטרה: איתור טענות עובדתיות ובדיקת התמיכה בהן
+
+## הוראות
+- עבור על הטקסט הבא וחלץ ממנו טענות עובדתיות שדורשות אימות בלבד.
+- אם צוינו המקורות התומכים בטקסט, חלץ גם אותם.
+
+## לכל טענה, בדוק:
+1. מה רמת החשיבות שלה ביחס לטקסט.
+2. האם המקור שצוין בטקסט תומך בה (אם נמצא מקור כזה).
+3. אם אין מקור מפורש בטקסט התומך בטענה, בדוק ברשת האם יש מקור התומך בטענה.
+4. ציין מהו העוגן המדויק במקור: פסקה, סעיף, עמוד או ציטוט קצר.
+5. האם התמיכה בטענה מלאה, חלקית, חסרה או אולי סותרת.
+6. לגבי הטענות שהתמיכה בהן אינה מלאה, ציין: האם נדרש תיקון, ניסוח זהיר יותר או מחיקה של הטענה.
+
+## פלט מבוקש - הצג טבלה:
+| הטענה | רמת חשיבות | מקור תומך | מקור מוצע | עוגן מדויק במקור | רמת התמיכה | פעולה נדרשת | נוסח מוצע | נימוק | 
+
+## הטקסט לבדיקה:
+&#34;&#34;&#34;{הדבק כאן את הטקסט או צרף את הקובץ לבדיקה}&#34;&#34;&#34;
+
+## מקורות:
+&#34;&#34;&#34;{הדבק או צרף את המקורות שבהם נעזרת להפקת התשובה}&#34;&#34;&#34;</code></pre>
+    </article>
+    
+    <article class="prompt-card">
+      <h4>איתור כשלים לוגיים</h4>
+      <button class="copy-button" type="button" data-copy-label="העתק" data-copied-label="הועתק">העתק</button>
+      <pre><code># המטרה: איתור כשלים לוגיים ובעיות בשלמות הטקסט
+
+## הוראות:
+- עבור על הטקסט הבא ובצע בדיקת שלמות לוגית בלבד.
+- אל תבדוק עובדות מול מקורות.
+- הצע תיקונים רק במקומות שבהם המבנה הלוגי של הטקסט אינו תקין או אינו שלם.
+
+## בדוק במיוחד:
+1. שימוש לא נכון במילות קישור, יחס, ניגוד, סיבה או מסקנה.
+2. משפטים שמתחילים בכיוון אחד אך בפועל מובילים לכיוון אחר.
+3. מסקנות שאינן נובעות בבירור מההסבר.
+4. סתירות פנימיות בין משפטים, פסקאות או סעיפים.
+5. חוסרים בהסבר או שלבים חסרים בטיעון.
+6. מעבר לא ברור בין פסקאות או סעיפים.
+7. הכללות רחבות מדי ביחס למה שנאמר בטקסט.
+
+## פלט מבוקש - הצג טבלה:
+| מיקום בטקסט | רמת הבעיה | הבעיה הלוגית | מדוע זו בעיה | הצעת תיקון |
+
+## הטקסט לבדיקה:
+&#34;&#34;&#34;{הדבק כאן את הטקסט או צרף את הקובץ לבדיקה}&#34;&#34;&#34;</code></pre>
+    </article>
+    
+    <article class="prompt-card">
+      <h4>איתור בעיות סגנון וליטוש</h4>
+      <button class="copy-button" type="button" data-copy-label="העתק" data-copied-label="הועתק">העתק</button>
+      <pre><code># המטרה: איתור בעיות סגנון, כפילויות, הגהה לשונית וליטוש
+
+## הוראות
+- עבור על הטקסט הבא ובצע בדיקת סגנון ולשון בלבד.
+- אל תבדוק עובדות מחדש.
+- אל תבדוק את השלמות הלוגית של הטקסט.
+- הצע תיקונים נקודתיים בלבד.
+
+## בדוק במיוחד:
+1. כפילויות וחזרות מיותרות.
+2. שינויי טון או סגנון בין חלקים שונים.
+3. חוסר אחידות במונחים, בכותרות או בצורת הפנייה לקורא.
+4. ניסוחים מסורבלים, ארוכים מדי או לא ברורים.
+5. חריגה מהנחיות הסגנון שניתנו בפרומפט המקורי.
+6. בעיות ברצף הקריאה בין משפטים, פסקאות או סעיפים.
+7. שגיאות לשון: כתיב, פיסוק, תחביר והתאמות דקדוקיות.
+
+
+## פלט מבוקש - הצג טבלה:
+| מיקום בטקסט | סוג הבעיה | הציטוט הקיים | מדוע כדאי לתקן | הצעת תיקון |
+
+## הנחיות הסגנון המקוריות, אם היו
+&#34;&#34;&#34;{הדבק כאן את הנחיות הסגנון שניתנו בפרומפט המקורי}&#34;&#34;&#34;
+
+## הטקסט לבדיקה
+&#34;&#34;&#34;{הדבק כאן את הטקסט או צרף את הקובץ לבדיקה}&#34;&#34;&#34;</code></pre>
+    </article>
+    
+    <article class="prompt-card">
+      <h4>איתור מידע רגיש</h4>
+      <button class="copy-button" type="button" data-copy-label="העתק" data-copied-label="הועתק">העתק</button>
+      <pre><code># המטרה: איתור חשיפה אפשרית של מידע רגיש
+
+## הוראות
+ - עבור על הטקסט הבא ובצע בדיקת נוכחות של מידע רגיש.
+- אל תניח שכל פרט שמופיע בטקסט מותר לפרסום.
+- סמן רק מקומות שעשויים לדרוש החלטה לפני שליחה, פרסום או שימוש חיצוני.
+
+## בדוק במיוחד:
+1. פרטים מזהים ישירים: שמות, טלפונים, כתובות דוא&#34;ל, מספרי זהות או כתובות מגורים.
+2. פרטים על אנשים או צדדים שלישיים: לקוחות, עובדים, תלמידים, מטופלים או גורמים אחרים.
+3. מידע אישי או רגיש: רפואי, משפטי, כספי, אישי או משפחתי.
+4. מידע פנימי של ארגון, חברה, צוות או פרויקט.
+5. פרטי גישה למערכות פנימיות: קישורים פנימיים, מזהים, סיסמאות, מפתחות גישה או פרטי התחברות.
+6. תוכן ממקורות שלא נועדו לחשיפה: ציטוטים ארוכים מדי ממסמך פנימי או ממקור מוגבל.
+7. פרטים שאינם מזהים לבדם, אך יחד עם פרטים אחרים עלולים לאפשר זיהוי.
+
+## פלט מבוקש - הצג טבלה:
+| מיקום בטקסט | סוג המידע הרגיש | מדוע ייתכן שזו בעיה | רמת רגישות | המלצה לטיפול |
+
+סווג את רמת הרגישות כנמוכה, בינונית או גבוהה.
+
+עבור כל ממצא, המלץ על אחת מהאפשרויות:
+- להשאיר כפי שהוא
+- למחוק או לטשטש
+- להחליף בניסוח כללי
+- לבדוק ידנית לפני פרסום
+
+## הטקסט לבדיקה
+&#34;&#34;&#34;{הדבק כאן את הטקסט או צרף את הקובץ לבדיקה}&#34;&#34;&#34;</code></pre>
+    </article>
+    
+  </div>
+  
+
+  
+  <div class="content-group markdown-body">
+    <h3>תשובות לתרגילים</h3>
+    <h4>תשובה לשאלה בסעיף &quot;בדיקת סף&quot;</h4>
+<p>כדאי היה לבקש כבר בפרומפט הראשון שבמקרה של תשובה שלילית יוצגו גם הנימוקים, משום שהנימוקים נדרשים ממילא כדי להבין מדוע התשובה נכשלה ולשפר את הפרומפט. כך ניתן לחסוך פנייה נוספת למודל, זמן וטוקנים.</p>
+<p>בהתאם לכך, אפשר היה לקצר את הפרומפט השני כך שיקבל את הנימוקים שכבר הופקו בבדיקת הסף ויבקש רק להציע כיצד לשפר את הבקשה ולנסח פרומפט חדש.</p>
+<h4>תשובה לתרגיל (שאלה) בסוף הפרק</h4>
+<p><strong>בפרק זה אין תשובה קבועה לתרגיל המסכם - התשובה תלויה בתוצר שהופק בפרק הקודם ובתוצאות בקרת האיכות.</strong></p>
+
+  </div>
+  
+
+  <p class="back-to-toc">
+    <a href="#table-of-contents">
+      <svg class="toc-list-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M9 6h11M9 12h11M9 18h11"/>
+        <path d="M4 6h1M4 12h1M4 18h1"/>
+      </svg>
+      <span>חזרה לתוכן העניינים</span>
+    </a>
+  </p>
+</section>
+
+<section class="book-section" id="chapter-10">
+  <h2>פרק 10 - ChatGPT</h2>
+
+  
+
+  
+  <div class="content-group markdown-body links-group">
+    <h3>קישורים</h3>
+    <h4>שירותים חיצוניים המוזכרים בפרק</h4>
+<ul>
+<li><span class="external-link"><a href="https://gmail.com"><strong>Gmail</strong></a><a class="new-tab-link" href="https://gmail.com" target="_blank" rel="noopener noreferrer" aria-label="פתח את Gmail בחלון חדש" title="פתח בחלון חדש"><svg class="new-tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></span></li>
+<li><span class="external-link"><a href="https://calendar.google.com"><strong>Google Calendar</strong></a><a class="new-tab-link" href="https://calendar.google.com" target="_blank" rel="noopener noreferrer" aria-label="פתח את Google Calendar בחלון חדש" title="פתח בחלון חדש"><svg class="new-tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></span></li>
+<li><span class="external-link"><a href="https://drive.google.com"><strong>Google Drive</strong></a><a class="new-tab-link" href="https://drive.google.com" target="_blank" rel="noopener noreferrer" aria-label="פתח את Google Drive בחלון חדש" title="פתח בחלון חדש"><svg class="new-tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></span></li>
+<li><span class="external-link"><a href="https://outlook.live.com"><strong>Microsoft Outlook</strong></a><a class="new-tab-link" href="https://outlook.live.com" target="_blank" rel="noopener noreferrer" aria-label="פתח את Microsoft Outlook בחלון חדש" title="פתח בחלון חדש"><svg class="new-tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></span></li>
+<li><span class="external-link"><a href="https://www.microsoft.com/microsoft-365/sharepoint/collaboration"><strong>Microsoft SharePoint</strong></a><a class="new-tab-link" href="https://www.microsoft.com/microsoft-365/sharepoint/collaboration" target="_blank" rel="noopener noreferrer" aria-label="פתח את Microsoft SharePoint בחלון חדש" title="פתח בחלון חדש"><svg class="new-tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></span></li>
+<li><span class="external-link"><a href="https://github.com"><strong>GitHub</strong></a><a class="new-tab-link" href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="פתח את GitHub בחלון חדש" title="פתח בחלון חדש"><svg class="new-tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></span></li>
+</ul>
+
+  </div>
+  
+
+  
+  <div class="content-group">
+    <h3>פרומפטים</h3>
+    
+    <article class="prompt-card">
+      <h4>פרומפט ראשון</h4>
+      <button class="copy-button" type="button" data-copy-label="העתק" data-copied-label="הועתק">העתק</button>
+      <pre><code>המר את כל מה שאתה רואה בתמונה המצורפת לתיאור טקסטואלי מובנה</code></pre>
+    </article>
+    
+    <article class="prompt-card">
+      <h4>פרומפט לעדכון התמונה</h4>
+      <button class="copy-button" type="button" data-copy-label="העתק" data-copied-label="הועתק">העתק</button>
+      <pre><code>עדכן את התמונה בהתאם לשינויים הבאים בתיאור:
+
+{הדבק את התיאור הערוך}</code></pre>
+    </article>
+    
+    <article class="prompt-card">
+      <h4>הנחיות קבועות לפרויקט</h4>
+      <button class="copy-button" type="button" data-copy-label="העתק" data-copied-label="הועתק">העתק</button>
+      <pre><code># מטרת הפרויקט:
+לעזור לי לנהל ולשווק עסק קטן למכירת עוגות ביתיות.
+
+## סגנון התשובות:
+כתוב בעברית פשוטה, נעימה ושיווקית, אך לא מוגזמת.
+
+## קהל היעד:
+לקוחות פרטיים שמזמינים עוגות לימי הולדת, שבתות, אירועים קטנים ומתנות.
+
+## מה חשוב להדגיש:
+- טריות
+- אפייה ביתית
+- יחס אישי
+- אפשרות להתאמה לפי בקשת הלקוח
+- הזמנה מראש
+
+## מה לא לעשות:
+- אל תשתמש בניסוחים יוקרתיים מדי או רשמיים מדי.
+- אל תציע מבצעים, מחירים או זמני אספקה בלי שאמסור אותם במפורש.
+
+## סוגי עזרה רצויים:
+- ניסוח פוסטים לפייסבוק ולאינסטגרם
+- כתיבת תיאורי מוצרים
+- ניסוח הודעות ללקוחות
+- רעיונות לשמות של עוגות ומארזים
+- שיפור טקסטים קיימים</code></pre>
+    </article>
+    
+    <article class="prompt-card">
+      <h4>Instructions - הוראות</h4>
+      <button class="copy-button" type="button" data-copy-label="העתק" data-copied-label="הועתק">העתק</button>
+      <pre><code># תפקידך: אתה עוזר לניסוח הודעות קצרות ללקוחות בעברית.
+
+## כללי עבודה
+- כתוב בעברית פשוטה, מנומסת וברורה.
+- שמור על טון רגוע, שירותי ולא מתנשא.
+- אם חסר מידע חשוב, שאל שאלה אחת קצרה לפני הניסוח.
+- אל תמציא פרטים שלא נמסרו לך.
+- אל תבטיח הנחה, פיצוי, זיכוי או זמן הספקה.
+- כאשר מתאים, הצע נוסח אחד קצר ונוסח שני רשמי יותר.</code></pre>
+    </article>
+    
+    <article class="prompt-card">
+      <h4>פרומפט לבדיקה ב-Preview</h4>
+      <button class="copy-button" type="button" data-copy-label="העתק" data-copied-label="הועתק">העתק</button>
+      <pre><code>לקוח כועס כי המשלוח מתעכב. כתוב תגובה קצרה</code></pre>
+    </article>
+    
+    <article class="prompt-card">
+      <h4>כלל נוסף במקרה שהתשובה ארוכה מדי</h4>
+      <button class="copy-button" type="button" data-copy-label="העתק" data-copied-label="הועתק">העתק</button>
+      <pre><code>ברירת המחדל: כתוב עד ארבעה משפטים בלבד.</code></pre>
+    </article>
+    
+    <article class="prompt-card">
+      <h4>שליחת אימייל באמצעות gmail</h4>
+      <button class="copy-button" type="button" data-copy-label="העתק" data-copied-label="הועתק">העתק</button>
+      <pre><code># המטרה:
+כתוב הודעת אימייל קצרה ושלח אותה אליי, כלומר מהאימייל המחובר שלי אל אותה כתובת אימייל.
+
+## נושא המייל:
+מזג האוויר היום
+
+## תוכן המייל:
+&#34;&#34;&#34;
+שלום — היום יום {כתוב כאן את שם היום הנוכחי בעברית}.
+
+מזג האוויר היום בתל אביב הוא: {רשום כאן בקצרה את מזג האוויר, הטמפרטורה, רמת הלחות, והאם מזג האוויר רגיל לעונה}.
+&#34;&#34;&#34;
+
+## הנחיות ביצוע:
+- נסח את המייל בעברית ברורה וקצרה.
+- לפני השליחה, הצג לי את נוסח המייל המלא ובקש ממני אישור מפורש - אל תשלח את המייל לפני שאכתוב: &#34;מאשר שליחה&#34;.</code></pre>
+    </article>
+    
+    <article class="prompt-card">
+      <h4>פרומפט ראשי</h4>
+      <button class="copy-button" type="button" data-copy-label="העתק" data-copied-label="הועתק">העתק</button>
+      <pre><code># המטרה:
+צור חומר פרסומי למארז עוגות לשבת.
+
+## פרטי העסק:
+שם העסק: העוגות של נועה
+סוג העסק: עסק ביתי קטן לאפיית עוגות
+הסגנון הרצוי: חם, ביתי, נעים ואמין
+
+## פרטי המארז:
+שם המארז: מארז שבת משפחתי
+המארז כולל: עוגת שוקולד; עוגת שמרים; שש עוגיות ביתיות
+מחיר: 129 שקלים
+מועד אחרון להזמנה: יום חמישי בשעה 18:00
+איסוף: יום שישי בין השעות 8:00 ל־13:00
+
+## התוצרים המבוקשים:
+- צור תמונה ריבועית של המארז, באווירה ביתית וחמה וללא טקסט בתוך התמונה.
+- צור מסמך פרסומי בן עמוד אחד המשלב את התמונה.
+- במסמך כלול כותרת, תיאור קצר של המארז, המחיר, פרטי ההזמנה ומשפט קצר המעודד את הקורא להזמין.
+- אפשר הורדה של התמונה כקובץ נפרד.
+
+## כללים:
+- כתוב בעברית פשוטה וקצרה.
+- אל תמציא מוצרים, מחירים, הנחות או פרטי קשר שלא נמסרו.
+- אל תפרסם את התוצר ואל תשלח אותו לאיש.
+- לפני שתסיים, בדוק שכל הפרטים במסמך תואמים לפרטים שמסרתי.</code></pre>
+    </article>
+    
+    <article class="prompt-card">
+      <h4>פרומפט להמשך - שינוי הסגנון</h4>
+      <button class="copy-button" type="button" data-copy-label="העתק" data-copied-label="הועתק">העתק</button>
+      <pre><code>שנה את הסגנון לחגיגי ובהיר יותר. עדכן בהתאם גם את התמונה וגם את עיצוב המסמך, אך אל תשנה את המוצרים, המחיר או זמני ההזמנה והאיסוף.</code></pre>
+    </article>
+    
+  </div>
+  
+
+  
+  <div class="content-group markdown-body">
+    <h3>תשובות לתרגילים</h3>
+    <p><strong>בפרק זה אין תשובות קבועות לתרגילים - התשובות תלויות בבחירות שלך ובתוצאות ההתנסות.</strong></p>
+
+  </div>
+  
+
+  <p class="back-to-toc">
+    <a href="#table-of-contents">
+      <svg class="toc-list-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M9 6h11M9 12h11M9 18h11"/>
+        <path d="M4 6h1M4 12h1M4 18h1"/>
+      </svg>
+      <span>חזרה לתוכן העניינים</span>
+    </a>
+  </p>
+</section>
+
+<section class="book-section" id="chapter-11">
+  <h2>פרק 11 - Gemini</h2>
+
+  
+
+  
+  <div class="content-group markdown-body links-group">
+    <h3>קישורים</h3>
+    <h4>יישומים ושירותים המוזכרים בפרק</h4>
+<ul>
+<li><span class="external-link"><a href="https://drive.google.com">Google Drive</a><a class="new-tab-link" href="https://drive.google.com" target="_blank" rel="noopener noreferrer" aria-label="פתח את Google Drive בחלון חדש" title="פתח בחלון חדש"><svg class="new-tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></span></li>
+<li><span class="external-link"><a href="https://docs.google.com">Google Docs</a><a class="new-tab-link" href="https://docs.google.com" target="_blank" rel="noopener noreferrer" aria-label="פתח את Google Docs בחלון חדש" title="פתח בחלון חדש"><svg class="new-tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></span></li>
+<li><span class="external-link"><a href="https://sheets.google.com">Google Sheets</a><a class="new-tab-link" href="https://sheets.google.com" target="_blank" rel="noopener noreferrer" aria-label="פתח את Google Sheets בחלון חדש" title="פתח בחלון חדש"><svg class="new-tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></span></li>
+<li><span class="external-link"><a href="https://mail.google.com">Gmail</a><a class="new-tab-link" href="https://mail.google.com" target="_blank" rel="noopener noreferrer" aria-label="פתח את Gmail בחלון חדש" title="פתח בחלון חדש"><svg class="new-tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></span></li>
+<li><span class="external-link"><a href="https://calendar.google.com">Google Calendar</a><a class="new-tab-link" href="https://calendar.google.com" target="_blank" rel="noopener noreferrer" aria-label="פתח את Google Calendar בחלון חדש" title="פתח בחלון חדש"><svg class="new-tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></span></li>
+<li><span class="external-link"><a href="https://tasks.google.com">Google Tasks</a><a class="new-tab-link" href="https://tasks.google.com" target="_blank" rel="noopener noreferrer" aria-label="פתח את Google Tasks בחלון חדש" title="פתח בחלון חדש"><svg class="new-tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></span></li>
+<li><span class="external-link"><a href="https://www.youtube.com">YouTube</a><a class="new-tab-link" href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" aria-label="פתח את YouTube בחלון חדש" title="פתח בחלון חדש"><svg class="new-tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></span></li>
+<li><span class="external-link"><a href="https://github.com">GitHub</a><a class="new-tab-link" href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="פתח את GitHub בחלון חדש" title="פתח בחלון חדש"><svg class="new-tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></span></li>
+<li><span class="external-link"><a href="https://www.canva.com">Canva</a><a class="new-tab-link" href="https://www.canva.com" target="_blank" rel="noopener noreferrer" aria-label="פתח את Canva בחלון חדש" title="פתח בחלון חדש"><svg class="new-tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></span></li>
+</ul>
+
+  </div>
+  
+
+  
+  <div class="content-group">
+    <h3>פרומפטים</h3>
+    
+    <article class="prompt-card">
+      <h4>פרומפט ראשון</h4>
+      <button class="copy-button" type="button" data-copy-label="העתק" data-copied-label="הועתק">העתק</button>
+      <pre><code>המר את כל מה שאתה רואה בתמונה המצורפת לתיאור טקסטואלי מובנה</code></pre>
+    </article>
+    
+    <article class="prompt-card">
+      <h4>פרומפט לאחר עריכת התיאור</h4>
+      <button class="copy-button" type="button" data-copy-label="העתק" data-copied-label="הועתק">העתק</button>
+      <pre><code>עדכן את התמונה בהתאם לשינויים הבאים בתיאור:
+
+{הדבק את התיאור הערוך}</code></pre>
+    </article>
+    
+    <article class="prompt-card">
+      <h4>הנחיות קבועות למחברת</h4>
+      <button class="copy-button" type="button" data-copy-label="העתק" data-copied-label="הועתק">העתק</button>
+      <pre><code># מטרת המחברת
+לעזור לי לנהל ולשווק עסק קטן למכירת עוגות ביתיות.
+
+## סגנון התשובות
+כתוב בעברית פשוטה, חמה ושיווקית, אך לא מוגזמת.
+
+## קהל היעד
+לקוחות שמזמינים עוגות לימי הולדת, שבתות, אירועים קטנים ומתנות.
+
+## דגשים חשובים
+- טריות
+- אפייה ביתית
+- יחס אישי
+- אפשרות להתאמה לפי בקשת הלקוח
+- הזמנה מראש
+
+## מה לא לעשות
+- אל תשתמש בניסוחים יוקרתיים מדי או רשמיים מדי.
+- אל תציע מבצעים, מחירים או זמני אספקה בלי שאמסור אותם במפורש.
+
+## סוגי עזרה רצויים:
+- ניסוח פוסטים לפייסבוק ולאינסטגרם
+- כתיבת תיאורי מוצרים
+- ניסוח הודעות ללקוחות
+- רעיונות לשמות של עוגות ומארזים
+- שיפור טקסטים קיימים</code></pre>
+    </article>
+    
+    <article class="prompt-card">
+      <h4>הוראות ה-Gem</h4>
+      <button class="copy-button" type="button" data-copy-label="העתק" data-copied-label="הועתק">העתק</button>
+      <pre><code># תפקידך: אתה עוזר לניסוח הודעות קצרות ללקוחות בעברית.
+
+## כללי עבודה
+- כתוב בעברית פשוטה, מנומסת וברורה.
+- שמור על טון רגוע, שירותי ולא מתנשא.
+- אם חסר מידע חשוב, שאל שאלה אחת קצרה לפני הניסוח.
+- אל תמציא פרטים שלא נמסרו לך.
+- אל תבטיח הנחה, פיצוי, זיכוי או זמן הספקה.
+- כאשר מתאים, הצע נוסח אחד קצר ונוסח שני רשמי יותר.</code></pre>
+    </article>
+    
+    <article class="prompt-card">
+      <h4>פרומפט לבדיקה בתצוגה המקדימה</h4>
+      <button class="copy-button" type="button" data-copy-label="העתק" data-copied-label="הועתק">העתק</button>
+      <pre><code>לקוח כועס כי המשלוח מתעכב. כתוב תגובה קצרה.</code></pre>
+    </article>
+    
+    <article class="prompt-card">
+      <h4>כלל נוסף במקרה שהתשובה ארוכה מדי</h4>
+      <button class="copy-button" type="button" data-copy-label="העתק" data-copied-label="הועתק">העתק</button>
+      <pre><code>ברירת המחדל: כתוב עד ארבעה משפטים בלבד.</code></pre>
+    </article>
+    
+  </div>
+  
+
+  
+  <div class="content-group markdown-body">
+    <h3>תשובות לתרגילים</h3>
+    <p><strong>בפרק זה אין תשובות קבועות לתרגילים - התשובות תלויות בבחירות שלך ובתוצאות ההתנסות.</strong></p>
+
+  </div>
+  
+
+  <p class="back-to-toc">
+    <a href="#table-of-contents">
+      <svg class="toc-list-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M9 6h11M9 12h11M9 18h11"/>
+        <path d="M4 6h1M4 12h1M4 18h1"/>
+      </svg>
+      <span>חזרה לתוכן העניינים</span>
+    </a>
+  </p>
+</section>
+
+<section class="book-section" id="chapter-12">
+  <h2>פרק 12 - התקנת LLM מקומי</h2>
+
+  
+
+  
+  <div class="content-group markdown-body links-group">
+    <h3>קישורים</h3>
+    <h4>מודלים מקומיים וכלים</h4>
+<ul>
+<li><span class="external-link"><a href="https://lmstudio.ai/download"><strong>LM Studio - הורדה</strong></a><a class="new-tab-link" href="https://lmstudio.ai/download" target="_blank" rel="noopener noreferrer" aria-label="פתח את LM Studio - הורדה בחלון חדש" title="פתח בחלון חדש"><svg class="new-tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></span></li>
+<li><span class="external-link"><a href="https://huggingface.co/models"><strong>Hugging Face - מאגר מודלים</strong></a><a class="new-tab-link" href="https://huggingface.co/models" target="_blank" rel="noopener noreferrer" aria-label="פתח את Hugging Face - מאגר מודלים בחלון חדש" title="פתח בחלון חדש"><svg class="new-tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></span></li>
+<li><span class="external-link"><a href="https://ollama.com"><strong>Ollama</strong></a><a class="new-tab-link" href="https://ollama.com" target="_blank" rel="noopener noreferrer" aria-label="פתח את Ollama בחלון חדש" title="פתח בחלון חדש"><svg class="new-tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></span></li>
+</ul>
+
+  </div>
+  
+
+  
+
+  
+
+  <p class="back-to-toc">
+    <a href="#table-of-contents">
+      <svg class="toc-list-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M9 6h11M9 12h11M9 18h11"/>
+        <path d="M4 6h1M4 12h1M4 18h1"/>
+      </svg>
+      <span>חזרה לתוכן העניינים</span>
+    </a>
+  </p>
+</section>
+
+<section class="book-section" id="appendix-01">
+  <h2>נספח א - תחביר Markdown</h2>
+
+  
+
+  
+  <div class="content-group markdown-body links-group">
+    <h3>קישורים</h3>
+    <h4>האנשים שמאחורי Markdown</h4>
+<ul>
+<li><span class="external-link"><a href="https://daringfireball.net"><strong>John Gruber - Daring Fireball</strong></a><a class="new-tab-link" href="https://daringfireball.net" target="_blank" rel="noopener noreferrer" aria-label="פתח את John Gruber - Daring Fireball בחלון חדש" title="פתח בחלון חדש"><svg class="new-tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></span></li>
+<li><span class="external-link"><a href="http://www.aaronsw.com"><strong>Aaron Swartz</strong></a><a class="new-tab-link" href="http://www.aaronsw.com" target="_blank" rel="noopener noreferrer" aria-label="פתח את Aaron Swartz בחלון חדש" title="פתח בחלון חדש"><svg class="new-tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></span></li>
+</ul>
+<h4>Markdown - מקורות וכלים</h4>
+<ul>
+<li><span class="external-link"><a href="https://www.markdownguide.org"><strong>מדריך Markdown מומלץ</strong></a><a class="new-tab-link" href="https://www.markdownguide.org" target="_blank" rel="noopener noreferrer" aria-label="פתח את מדריך Markdown מומלץ בחלון חדש" title="פתח בחלון חדש"><svg class="new-tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></span></li>
+<li><span class="external-link"><a href="https://ghostwriter.kde.org"><strong>ghostwriter - עורך Markdown מומלץ</strong></a><a class="new-tab-link" href="https://ghostwriter.kde.org" target="_blank" rel="noopener noreferrer" aria-label="פתח את ghostwriter - עורך Markdown מומלץ בחלון חדש" title="פתח בחלון חדש"><svg class="new-tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></span></li>
+</ul>
+
+  </div>
+  
+
+  
+
+  
+
+  <p class="back-to-toc">
+    <a href="#table-of-contents">
+      <svg class="toc-list-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M9 6h11M9 12h11M9 18h11"/>
+        <path d="M4 6h1M4 12h1M4 18h1"/>
+      </svg>
+      <span>חזרה לתוכן העניינים</span>
+    </a>
+  </p>
+</section>
+
+<section class="book-section" id="appendix-02">
+  <h2>נספח ב - איך מאמנים מודל שפה גדול</h2>
+
+  
+
+  
+  <div class="content-group markdown-body links-group">
+    <h3>קישורים</h3>
+    <h4>מקורות ומחקרים המוזכרים בנספח</h4>
+<ul>
+<li><span class="external-link"><a href="https://commoncrawl.org"><strong>Common Crawl</strong> - מאגר תוכן אינטרנטי המשמש בין היתר למחקר ולאימון מודלים</a><a class="new-tab-link" href="https://commoncrawl.org" target="_blank" rel="noopener noreferrer" aria-label="פתח את Common Crawl - מאגר תוכן אינטרנטי המשמש בין היתר למחקר ולאימון מודלים בחלון חדש" title="פתח בחלון חדש"><svg class="new-tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></span></li>
+<li><span class="external-link"><a href="https://arxiv.org/abs/1706.03762v1"><strong>Attention Is All You Need</strong> - המאמר שהציג את ארכיטקטורת Transformer</a><a class="new-tab-link" href="https://arxiv.org/abs/1706.03762v1" target="_blank" rel="noopener noreferrer" aria-label="פתח את Attention Is All You Need - המאמר שהציג את ארכיטקטורת Transformer בחלון חדש" title="פתח בחלון חדש"><svg class="new-tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></span></li>
+<li><span class="external-link"><a href="https://arxiv.org/abs/2501.12948"><strong>DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning</strong></a><a class="new-tab-link" href="https://arxiv.org/abs/2501.12948" target="_blank" rel="noopener noreferrer" aria-label="פתח את DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning בחלון חדש" title="פתח בחלון חדש"><svg class="new-tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></span></li>
+</ul>
+
+  </div>
+  
+
+  
+
+  
+
+  <p class="back-to-toc">
+    <a href="#table-of-contents">
+      <svg class="toc-list-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M9 6h11M9 12h11M9 18h11"/>
+        <path d="M4 6h1M4 12h1M4 18h1"/>
+      </svg>
+      <span>חזרה לתוכן העניינים</span>
+    </a>
+  </p>
+</section>
+
+<section class="book-section" id="appendix-03">
+  <h2>נספח ג - ניהול חסכוני של מכסת השימוש</h2>
+
+  
+
+  
+
+  
+
+  
+
+  <p class="back-to-toc">
+    <a href="#table-of-contents">
+      <svg class="toc-list-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M9 6h11M9 12h11M9 18h11"/>
+        <path d="M4 6h1M4 12h1M4 18h1"/>
+      </svg>
+      <span>חזרה לתוכן העניינים</span>
+    </a>
+  </p>
+</section>
+
+
+  </main>
+  
+  <footer class="site-footer">
+    <div class="container">
+      <nav class="footer-links" aria-label="קישורים נוספים">
+        
+        <a class="footer-link footer-link--website" href="https://kita.co.il" target="_blank" rel="noopener noreferrer">
+          
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></svg>
+          
+          <span>כיתה ברשת</span>
+        </a>
+        
+        <a class="footer-link footer-link--license" href="https://github.com/IlanAmoyal/ai-understand-me/blob/master/LICENSE.md" target="_blank" rel="noopener noreferrer">
+          
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg>
+          
+          <span>רישיון שימוש</span>
+        </a>
+        
+        <a class="footer-link footer-link--github" href="https://github.com/IlanAmoyal/ai-understand-me" target="_blank" rel="noopener noreferrer">
+          
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2.7a9.5 9.5 0 0 0-3 18.5c.5.1.7-.2.7-.5v-1.8c-2.8.6-3.4-1.2-3.4-1.2-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 0 1.6 1.1 1.6 1.1.9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.7-1.3-2.3-.3-4.7-1.1-4.7-5a3.9 3.9 0 0 1 1-2.7 3.6 3.6 0 0 1 .1-2.7s.8-.3 2.8 1a9.5 9.5 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1a3.6 3.6 0 0 1 .1 2.7 3.9 3.9 0 0 1 1 2.7c0 3.9-2.4 4.7-4.7 5 .4.3.7 1 .7 2v3c0 .3.2.6.7.5A9.5 9.5 0 0 0 12 2.7z"/></svg>
+          
+          <span>GitHub</span>
+        </a>
+        
+        <a class="footer-link footer-link--linkedin" href="https://www.linkedin.com/in/ilan-amoyal" target="_blank" rel="noopener noreferrer">
+          
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5.2 3.8a2.2 2.2 0 1 1 0 4.4 2.2 2.2 0 0 1 0-4.4zM3.3 9.8h3.8V21H3.3zM9.4 9.8H13v1.5h.1c.5-.9 1.7-1.9 3.5-1.9 3.8 0 4.5 2.5 4.5 5.7V21h-3.8v-5.2c0-1.2 0-2.9-1.8-2.9s-2.1 1.4-2.1 2.8V21H9.4z"/></svg>
+          
+          <span>יצירת קשר עם המחבר בלינקדאין</span>
+        </a>
+        
+        <a class="footer-link footer-link--email" href="mailto:ai.understand.me@gmail.com">
+          
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg>
+          
+          <span>דיווח על שגיאה באימייל</span>
+        </a>
+        
+      </nav>
+    </div>
+  </footer>
+  
+  <div id="copy-status" class="visually-hidden" aria-live="polite" aria-atomic="true" data-copy-failed-label="ההעתקה נכשלה"></div>
+  <script src="../../static/js/site.js"></script>
+</body>
+</html>
