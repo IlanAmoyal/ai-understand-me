@@ -526,10 +526,15 @@ ul > li::marker {
   stroke-linejoin: round;
 }
 
-.footer-link--github svg,
-.footer-link--linkedin svg {
-  fill: currentColor;
-  stroke: none;
+.footer-icon {
+  inline-size: 1.15em;
+  block-size: 1.15em;
+  flex: 0 0 auto;
+  object-fit: contain;
+}
+
+.footer-icon--kita {
+  border-radius: 50%;
 }
 
 @media (max-width: 640px) {
@@ -578,4 +583,142 @@ ul > li::marker {
 
 .info-page {
   padding-block: clamp(1.6rem, 4vw, 2.8rem);
+}
+
+.prompt-service-actions {
+  clear: both;
+  margin-block-start: 1rem;
+  padding-block-start: .85rem;
+  border-block-start: 1px solid color-mix(in srgb, var(--blue-dark) 22%, white);
+}
+
+.prompt-service-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .6rem .8rem;
+}
+
+.prompt-service-label {
+  font-weight: 650;
+  color: var(--prompt-text);
+}
+
+.prompt-service-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .45rem;
+}
+
+.ai-service-button,
+.ai-service-confirm {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .32rem;
+  min-block-size: 2rem;
+  border: 1px solid color-mix(in srgb, var(--blue-dark) 48%, white);
+  border-radius: .4rem;
+  padding: .28rem .52rem;
+  background: var(--surface);
+  color: var(--blue-dark);
+  font: inherit;
+  font-size: .9rem;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.ai-service-button:hover,
+.ai-service-button:focus-visible,
+.ai-service-confirm:hover,
+.ai-service-confirm:focus-visible {
+  background: color-mix(in srgb, var(--blue-light) 72%, white);
+}
+
+.ai-service-icon {
+  inline-size: 1rem;
+  block-size: 1rem;
+  flex: 0 0 auto;
+  object-fit: contain;
+}
+
+.ai-service-notice {
+  margin-block-start: .8rem;
+  padding: .8rem .9rem;
+  border: 1px solid color-mix(in srgb, var(--orange-dark) 38%, white);
+  border-radius: .55rem;
+  background: color-mix(in srgb, var(--surface) 78%, var(--blue-light));
+}
+
+.ai-service-notice[hidden] {
+  display: none;
+}
+
+.ai-service-notice p {
+  margin: 0;
+}
+
+.ai-service-notice-text strong {
+  color: var(--blue-dark);
+  font-weight: 750;
+}
+
+.ai-service-notice-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: .65rem 1rem;
+  margin-block-start: .7rem;
+}
+
+.ai-service-skip-label {
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  cursor: pointer;
+}
+
+.ai-service-skip-label input {
+  inline-size: 1rem;
+  block-size: 1rem;
+  accent-color: var(--blue-dark);
+}
+
+.ai-service-confirm {
+  background: var(--blue-dark);
+  color: #ffffff;
+  border-color: var(--blue-dark);
+}
+
+.ai-service-confirm:hover,
+.ai-service-confirm:focus-visible {
+  background: color-mix(in srgb, var(--blue-dark) 88%, black);
+}
+
+@media (max-width: 640px) {
+  .prompt-service-row {
+    align-items: stretch;
+  }
+
+  .prompt-service-label {
+    flex-basis: 100%;
+  }
+
+  .prompt-service-buttons {
+    width: 100%;
+  }
+
+  .ai-service-button {
+    flex: 1 1 calc(50% - .45rem);
+  }
+
+  .ai-service-notice-controls {
+    align-items: stretch;
+  }
+
+  .ai-service-skip-label,
+  .ai-service-confirm {
+    width: 100%;
+  }
 }
