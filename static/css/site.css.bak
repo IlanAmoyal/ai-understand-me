@@ -486,8 +486,30 @@ ul > li::marker {
   padding-block-end: calc(var(--fixed-footer-height, 4.5rem) + 1rem);
 }
 
-.site-footer .container {
-  padding-block: 1rem;
+.site-footer-links-row,
+.site-footer-copyright-row {
+  min-block-size: 3.25rem;
+}
+
+.site-footer-links-row .container,
+.site-footer-copyright-row .container {
+  min-block-size: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-block: .7rem;
+}
+
+.site-footer-copyright-row {
+  border-block-start: 1px solid #d9d9d9;
+}
+
+.site-copyright {
+  margin: 0;
+  color: #6b6b6b;
+  font-size: .86rem;
+  font-weight: 400;
+  text-align: center;
 }
 
 .footer-links {
@@ -526,10 +548,15 @@ ul > li::marker {
   stroke-linejoin: round;
 }
 
-.footer-link--github svg,
-.footer-link--linkedin svg {
-  fill: currentColor;
-  stroke: none;
+.footer-icon {
+  inline-size: 1.15em;
+  block-size: 1.15em;
+  flex: 0 0 auto;
+  object-fit: contain;
+}
+
+.footer-icon--kita {
+  border-radius: 50%;
 }
 
 @media (max-width: 640px) {
@@ -610,14 +637,15 @@ ul > li::marker {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: .4rem;
-  min-block-size: 2.4rem;
+  gap: .32rem;
+  min-block-size: 2rem;
   border: 1px solid color-mix(in srgb, var(--blue-dark) 48%, white);
-  border-radius: .45rem;
-  padding: .42rem .7rem;
+  border-radius: .4rem;
+  padding: .28rem .52rem;
   background: var(--surface);
   color: var(--blue-dark);
   font: inherit;
+  font-size: .9rem;
   font-weight: 650;
   cursor: pointer;
 }
@@ -630,18 +658,10 @@ ul > li::marker {
 }
 
 .ai-service-icon {
-  inline-size: 1.15rem;
-  block-size: 1.15rem;
+  inline-size: 1rem;
+  block-size: 1rem;
   flex: 0 0 auto;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 1.7;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-.ai-service-button[data-service-id="chatgpt"] .ai-service-icon circle {
-  fill: none;
+  object-fit: contain;
 }
 
 .ai-service-notice {
@@ -658,6 +678,11 @@ ul > li::marker {
 
 .ai-service-notice p {
   margin: 0;
+}
+
+.ai-service-notice-text strong {
+  color: var(--blue-dark);
+  font-weight: 750;
 }
 
 .ai-service-notice-controls {
@@ -718,4 +743,13 @@ ul > li::marker {
   .ai-service-confirm {
     width: 100%;
   }
+}
+
+.info-content ol,
+.info-content ul {
+  padding-inline-start: 1.6rem;
+}
+
+.info-empty-message {
+  color: var(--muted);
 }

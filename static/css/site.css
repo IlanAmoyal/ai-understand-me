@@ -486,8 +486,27 @@ ul > li::marker {
   padding-block-end: calc(var(--fixed-footer-height, 4.5rem) + 1rem);
 }
 
-.site-footer .container {
-  padding-block: 1rem;
+.site-footer-links-row,
+.site-footer-copyright-row {
+  min-block-size: 2.8rem;
+}
+
+.site-footer-links-row .container,
+.site-footer-copyright-row .container {
+  min-block-size: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-block: .45rem;
+}
+
+
+.site-copyright {
+  margin: 0;
+  color: #6b6b6b;
+  font-size: .86rem;
+  font-weight: 400;
+  text-align: center;
 }
 
 .footer-links {
@@ -721,4 +740,13 @@ ul > li::marker {
   .ai-service-confirm {
     width: 100%;
   }
+}
+
+.info-content ol,
+.info-content ul {
+  padding-inline-start: 1.6rem;
+}
+
+.info-empty-message {
+  color: var(--muted);
 }

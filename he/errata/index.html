@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>תיקונים - בינה, תביני אותי</title>
+  <title>תיקונים</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -44,14 +44,17 @@
     
 <section class="info-page">
   <h1>תיקונים</h1>
-  <p>אין תיקונים זמינים לספר</p>
+  
+  <p class="info-empty-message">אין תיקונים זמינים לספר</p>
+  
 </section>
 
   </main>
   
   <footer class="site-footer">
-    <div class="container">
-      <nav class="footer-links" aria-label="קישורים נוספים">
+    <div class="site-footer-links-row">
+      <div class="container">
+        <nav class="footer-links" aria-label="קישורים נוספים">
         
         <a class="footer-link footer-link--website" href="https://kita.co.il" target="_blank" rel="noopener noreferrer">
           
@@ -88,8 +91,16 @@
           <span>דיווח על שגיאה באימייל</span>
         </a>
         
-      </nav>
+        </nav>
+      </div>
     </div>
+    
+    <div class="site-footer-copyright-row">
+      <div class="container">
+        <p class="site-copyright">© 2026 אילן אמויאל. כל הזכויות שמורות.</p>
+      </div>
+    </div>
+    
   </footer>
   
   <div id="copy-status" class="visually-hidden" aria-live="polite" aria-atomic="true" data-copy-failed-label="ההעתקה נכשלה"></div>
