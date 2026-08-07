@@ -1,7 +1,7 @@
 <div dir="rtl">
 
 <p>
-  <img src="assets/cover/cover-repo.png" width="1400" height="320">
+  <img src="assets/cover/cover-repo.png" width="2800" height="640">
 </p>
 
 <a id="hebrew"></a>
