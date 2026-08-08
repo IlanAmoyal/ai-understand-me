@@ -1,0 +1,9 @@
+/test-local/
+.DS_Store
+Thumbs.db
+Desktop.ini
+.vscode/
+.idea/
+*.tmp
+*.bak
+*~
