@@ -11,7 +11,6 @@
   --surface: #ffffff;
   --border: #d6d9dd;
   --muted: #5d6268;
-  --banner-edge: #111a18;
   --nav-background: #181d17;
   --nav-text: #f5f5f5;
 
@@ -79,7 +78,7 @@ img {
 
 .site-banner {
   width: 100%;
-  background: var(--banner-edge);
+  background: var(--nav-background);
   overflow: hidden;
 }
 
